@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Home from "./components/Home.jsx";
-import Footer from "./components/Footer.jsx"; // If Footer is in the same directory
+import Footer from "./components/Footer.jsx";
 import Layout from "./components/layout.jsx";
 import About from "./components/About.jsx";
 import Content from './components/Content.jsx'; // Include the extension if necessary
