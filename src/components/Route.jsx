@@ -1,15 +1,15 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import Footer from "./components/Footer.jsx";
-import Layout from "./components/layout";
-import About from "./components/About";
-import Content from './components/Content.jsx'; // Include the extension if necessary
-import Destination from "./components/Destination";
-import Agency from "./components/Agency";
-import Contact from "./components/Contact.jsx";
-import SignUp from "./pages/SignUp";
-import Login from "./pages/Login";
+import Header from "./Header.jsx";
+import Home from "./Home.jsx";
+import Footer from './Footer.jsx'; // Include the extension if necessary
+import Layout from "./layout.jsx";
+import About from "./About.jsx";
+import Content from './Content.jsx'; // Include the extension if necessary
+import Destination from "./Destination.jsx";
+import Agency from "./Agency.jsx";
+import Contact from "./Contact.jsx";
+import SignUp from "../pages/SignUp.jsx";
+import Login from "../pages/Login.jsx";
 
 
 function AppRouter() {
