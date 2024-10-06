@@ -4,7 +4,8 @@ import Home from "./components/Home";
 import Footer from "./components/footer";
 import Layout from "./components/layout";
 import About from "./components/About";
-import Content from "./components/Content"; // Capital 'C'
+import Content from './components/Content.jsx'; // Include the extension if necessary
+
 
 import Destination from "./components/Destination";
 import Agency from "./components/Agency";
