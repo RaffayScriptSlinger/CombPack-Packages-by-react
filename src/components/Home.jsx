@@ -1,7 +1,7 @@
 import { ThemeContext } from "../contexts/ThemeContext"
 import About from "./About"
 import Agency from "./Agency"
-import Contact from "./contact"
+import Contact from "./Contact"
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 

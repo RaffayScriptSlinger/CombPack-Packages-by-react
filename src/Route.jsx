@@ -1,15 +1,13 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Footer from "./components/footer";
+import Footer from "./components/Footer.jsx";
 import Layout from "./components/layout";
 import About from "./components/About";
 import Content from './components/Content.jsx'; // Include the extension if necessary
-
-
 import Destination from "./components/Destination";
 import Agency from "./components/Agency";
-import Contact from "./components/contact";
+import Contact from "./components/Contact.jsx";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 
