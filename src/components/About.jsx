@@ -1,5 +1,4 @@
-
-import Content from "./content";
+import Content from "./Content";
 import Destination from "./Destination";
 import { ThemeContext } from "../contexts/ThemeContext"
 import { useContext } from "react"
