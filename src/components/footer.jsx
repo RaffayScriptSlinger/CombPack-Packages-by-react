@@ -4,7 +4,7 @@ import { useContext } from "react"
 function Footer(){
   const { theme } = useContext(ThemeContext);
     return(
-        <div className={`${theme == "light" ? "bg-black text-white" : "bg-white text-black"}  `}>
+        <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `}>
              <footer className=" body-font">
   <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
     <a className="flex title-font font-medium items-center md:justify-start justify-center ">

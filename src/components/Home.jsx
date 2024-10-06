@@ -3,6 +3,7 @@ import About from "./About"
 import Agency from "./Agency"
 import Contact from "./contact"
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 
 
 
@@ -10,7 +11,7 @@ function Home() {
   const { theme } = useContext(ThemeContext);
   return (
 
-    <div className={`${theme == "light" ? "bg-black text-white" : "bg-white text-black"}  `}>
+    <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `}>
 
 
       <section className=" body-font ">
@@ -26,7 +27,7 @@ function Home() {
             <div className="flex w-full md:justify-start justify-center items-end">
 
               <button className="inline-flex text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded text-lg">
-                LET'S GET STARTED
+               <Link to={"/Content"} >  LET'S GET STARTED</Link>
               </button>
             </div>
 

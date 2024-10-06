@@ -1,10 +1,17 @@
 import { ThemeContext } from "../contexts/ThemeContext"
 import { useContext } from "react"
 
+
 function Content(){
+
+
+
+
+  // yaha theme mangwaye han mene Theme Context se
   const { theme } = useContext(ThemeContext);
+
     return(
-        <div className={`${theme == "light" ? "bg-black text-white" : "bg-white text-black"}  `}>
+        <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `}>
             <section className=" body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap w-full mb-20">
@@ -21,7 +28,7 @@ function Content(){
       </div>
       
       <p className="lg:w-1/2 w-full leading-relaxed ">
-      <h1>Explore & Adventure </h1>
+      <span>Explore & Adventure </span>
         Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
         gentrify, subway tile poke farm-to-table. Franzen you probably haven't
         heard of them man bun deep jianbing selfies heirloom prism food truck

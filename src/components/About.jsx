@@ -7,7 +7,7 @@ import { useContext } from "react"
 function About() {
     const { theme } = useContext(ThemeContext);
     return (
-        <div className={`${theme == "light" ? "bg-black text-white" : "bg-white text-black"}  `}>
+        <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `}>
             <section className=" body-font">
                 <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">

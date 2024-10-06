@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { SunOutlined, MoonOutlined } from "@ant-design/icons"
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext"
 import { Button } from "antd";
@@ -12,7 +11,7 @@ function Header() {
 
     return (
         <div>
-            <header className={`${theme === "light" ? "bg-black text-white py-2" : "bg-white text-black py-2"}  ` }>
+            <header className={`${theme === "light" ? "bg-white text-black py-2" : "bg-black text-white py-2"}  ` }>
 
 
                 <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -38,7 +37,7 @@ function Header() {
                         <Link className="mr-5 hover:text-blue-500" to={'/Contact'}>Contact </Link>
                     </nav>
                     <Button className=" border-red-700 border" onClick={ToggleTheme}>
-                        {theme === "light" ? "Make It Light" : "Make It Dark"}
+                        {theme === "light" ? "Make It Dark" : "Make It Light"}
                     </Button>
                     <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none 
                     hover:bg-gray-200 rounded text-base mt-4 md:mt-0 mx-2 text-black">
