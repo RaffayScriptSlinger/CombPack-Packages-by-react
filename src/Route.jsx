@@ -9,7 +9,8 @@ import Agency from "./components/Agency.jsx";
 import Contact from "./components/Contact.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
-// import Footer from "./components/Footer.jsx";
+import lastFooter from "./components/footer.jsx";
+
 
 
 
@@ -19,7 +20,7 @@ function AppRouter() {
             <Routes>
                 <Route path="/" element={<Layout><Home /></Layout>} /> 
                 <Route path="/Header" element={<Header />} />
-                {/* <Route path="/Footer" element={<Footer />} /> */}
+                <Route path="/" element={<lastFooter/>} />
                 <Route path="/About" element={<Layout><About /></Layout>} />
                 <Route path="/Content" element={<Layout><Content /></Layout>} />
                 <Route path="/Destination" element={<Layout><Destination /></Layout>} />
