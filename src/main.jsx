@@ -10,7 +10,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeContentProvider>
       <UserContextProvider>
-  
       <AppRouter />
       </UserContextProvider>
     </ThemeContentProvider>
