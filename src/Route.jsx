@@ -1,7 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Home from "./components/Home.jsx";
-// import Footer from "./components/Footer.jsx";
 import Layout from "./components/layout.jsx";
 import About from "./components/About.jsx";
 import Content from './components/Content.jsx';
@@ -10,7 +9,8 @@ import Agency from "./components/Agency.jsx";
 import Contact from "./components/Contact.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
-// import Footer from "./components/Footer.jsx";
+import Footer from "./components/Footer.jsx";
+
 
 
 function AppRouter() {
@@ -19,7 +19,7 @@ function AppRouter() {
             <Routes>
                 <Route path="/" element={<Layout><Home /></Layout>} /> 
                 <Route path="/Header" element={<Header />} />
-                {/* <Route path="/Footer" element={<Footer />} /> */}
+                <Route path="/Footer" element={<Footer />} />
                 <Route path="/About" element={<Layout><About /></Layout>} />
                 <Route path="/Content" element={<Layout><Content /></Layout>} />
                 <Route path="/Destination" element={<Layout><Destination /></Layout>} />
