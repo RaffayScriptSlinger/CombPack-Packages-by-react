@@ -8,7 +8,6 @@ function Layout({ children }) {
             <Header />
             {children}
             <LastFooter />
-     
         </div>
     )
 

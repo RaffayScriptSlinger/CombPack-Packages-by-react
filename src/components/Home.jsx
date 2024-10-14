@@ -1,3 +1,4 @@
+import { Image } from "antd"
 import { ThemeContext } from "../contexts/ThemeContext"
 import About from "./About"
 import Agency from "./Agency"
@@ -15,7 +16,7 @@ function Home() {
 
 
       <section className=" body-font ">
-        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+        <div className="container mx-auto flex px-5 py-16 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="title-font sm:text-4xl text-3xl mb-4   font-bold">
               TOUR & TRAVEL <span className="text-blue-500">AGENCY</span>
@@ -34,10 +35,11 @@ function Home() {
 
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
+          
+            <Image className="object-cover object-center rounded"
+            alt="hero"
               src="https://images.unsplash.com/photo-1683558351039-8fec1c8e6ff0?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
             />
           </div>
         </div>

@@ -2,6 +2,7 @@ import Content from "./Content";
 import Destination from "./Destination";
 import { ThemeContext } from "../contexts/ThemeContext"
 import { useContext } from "react"
+import { Image  } from "antd";
 
 function About() {
     const { theme } = useContext(ThemeContext);
@@ -10,10 +11,12 @@ function About() {
             <section className=" body-font">
                 <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                        <img
-                            className="object-cover object-center rounded-lg"
-                            alt="hero"
-                            src="https://images.unsplash.com/photo-1593644311729-d0b478c97d95?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    
+                        <Image
+                           className="object-cover object-center rounded-lg"
+                           alt="hero"
+                           src="https://images.unsplash.com/photo-1593644311729-d0b478c97d95?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        
                         />
                     </div>
                     <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center bg-gray-50 rounded-lg p-2" >
@@ -77,7 +80,7 @@ function About() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">
+                                    <h2 className="font-medium title-font text-sm text-indigo-600 mb-1 tracking-wider">
                                         Safety Always First
                                     </h2>
                                     <p className="leading-relaxed">
@@ -104,7 +107,7 @@ function About() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">
+                                    <h2 className="font-medium title-font text-sm text-indigo-600 mb-1 tracking-wider">
                                         Low Prices & Friendly
                                     </h2>
                                     <p className="leading-relaxed">
@@ -128,7 +131,7 @@ function About() {
                                     </svg>
                                 </div>
                                 <div className="flex-grow pl-4">
-                                    <h2 className="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">
+                                    <h2 className="font-medium title-font text-sm text-indigo-600 mb-1 tracking-wider">
                                         FINISH
                                     </h2>
                                     <p className="leading-relaxed">

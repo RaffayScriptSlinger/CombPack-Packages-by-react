@@ -5,6 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { userCredential } from "../contexts/userContext";
 import Swal from "sweetalert2";
+import { updateProfile } from 'firebase/auth';
 
 
 function Login() {
@@ -35,16 +36,17 @@ function Login() {
                 setEmail("")
                 setPassword("")
                 navigate(`/`);
-                
-
-                
-
-
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log("Error logging in:", errorCode, errorMessage);
+                Swal.fire(
+                    "Incorrect Password or email"
+                 
+                )
+                setPassword("")
+                setEmail("")
             });
 
     };
