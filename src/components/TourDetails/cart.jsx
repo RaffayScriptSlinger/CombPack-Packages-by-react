@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { useCart } from '../../contexts/CartContext'; // Path ko apne project ke structure ke mutabiq adjust karein
+import { ThemeContext } from '../../contexts/ThemeContext';
+import { useContext } from 'react';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 // Cart component ka start
 const Cart = () => {
@@ -8,14 +12,28 @@ const Cart = () => {
     
     // showGrandTotal ek state hai jo yeh decide karega ke grand total dikhana hai ya nahi. Initial value false hai, yani default me hidden hoga.
     const [showGrandTotal, setShowGrandTotal] = useState(false); 
+    const { theme  } = useContext(ThemeContext);
 
     return (
-        <div className="container mx-auto p-4">
+        <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-white   "}`}>
+
+
+        <div className='container mx-auto p-4 ' >
             <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
             
             {/* Agar cart me koi item nahi hai, to yeh message dikhai dega ke "Your cart is empty." */}
             {cartItems.length === 0 ? (
+                <div>
                 <p>Your cart is empty.</p>
+                <Button className='mt-4 inline-flex text-white bg-red-500 border-0 py-5 px-6 focus:outline-none hover:bg-red-600 rounded ml-4 '>
+                        <Link to="/">Back To Home</Link>
+                    </Button>
+                    <Button className='mt-4 inline-flex text-white bg-red-500 border-0 py-5 px-6 focus:outline-none hover:bg-red-600 rounded ml-4 '>
+                        <Link to="/TourDetails/Camping">Book A package</Link>
+                    </Button>
+                
+                </div>
+                
             ) : (
                 <div>
                     {/* Cart ke items ko list me dikhaya ja raha hai */}
@@ -62,8 +80,12 @@ const Cart = () => {
                     >
                         Clear Cart
                     </button>
+                    <Button className='mt-4 inline-flex text-white bg-red-500 border-0 py-5 px-6 focus:outline-none hover:bg-red-600 rounded ml-4 '>
+                        <Link to="/">Checkout</Link>
+                    </Button>
                 </div>
             )}
+        </div>
         </div>
     );
 };

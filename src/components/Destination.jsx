@@ -1,4 +1,5 @@
 import { Button, Image } from "antd"
+import { Link } from "react-router-dom"
 
 function Destination() {
   return (
@@ -44,7 +45,7 @@ function Destination() {
 
               </p>
 <Button className="text-center text-indigo-600">
-  Book 
+  View More... 
 </Button>
 
             </div>
@@ -64,9 +65,12 @@ function Destination() {
                 Explore the Maldives, where turquoise waters and pristine beaches await. Enjoy luxury in overwater bungalows, indulge in fresh seafood, and experience relaxation in this tropical paradise.
 
               </p>
+              <Link>
               <Button className="text-center text-indigo-600">
-                Book 
+              View More... 
               </Button>
+              </Link>
+              
 
             </div>
           </div>

@@ -15,6 +15,8 @@ import MountainBike from "./components/TourDetails/MountainBike.jsx";
 import Fishing from "./components/TourDetails/Fishing.jsx";
 import TourLayout from "./components/TourDetails/TourLayout.jsx";
 import Cart from "./components/TourDetails/cart.jsx";
+import Japan from "./components/TourDetails/Japan.jsx";
+import Maldives from "./components/TourDetails/Maldives.jsx";
 
 
 
@@ -35,7 +37,7 @@ function AppRouter() {
                 <Route path="/TourDetails/Hiking" element={<TourLayout><Hiking /></TourLayout>} />
                 <Route path="/TourDetails/MountainBike" element={<TourLayout><MountainBike /></TourLayout>} />
                 <Route path="/TourDetails/Fishing" element={<TourLayout><Fishing /></TourLayout>} />
-                <Route path="/cart" element={<Cart />} /> {/* Cart Route */}
+                <Route path="/cart" element={<TourLayout><Cart /></TourLayout>  } /> 
             </Routes>
         </BrowserRouter>
     );
