@@ -36,7 +36,7 @@ function SignUp() {
           console.log("User signed up:", user);
 
           Swal.fire("Welcome!", `User created with email: ${user.email}`, "success");
-          navigate(`/Login`);
+          navigate(`/`);
          
         })
         .catch((error) => {
@@ -50,11 +50,6 @@ function SignUp() {
 
   return (
     <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-blue-500"}`}>
-      <div className="flex justify-end align-middle mr-2 ">
-        <button className="border p-2 rounded mt-4">
-          <Link to="/">Home</Link>
-        </button>
-      </div>
       <div className="min-h-screen flex items-center justify-center">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
           <h2 className="text-2xl font-bold mb-6 text-center">Signup</h2>
@@ -103,6 +98,9 @@ function SignUp() {
             >
               Signup
             </button>
+            <p className="flex justify-center align-middle mt-1"> Already have a account?  <Link to="/login">  Login Here</Link></p>
+            <p className="flex justify-center align-middle mt-1">   <Link to="/">Guest Account</Link></p>
+
           </form>
         </div>
       </div>

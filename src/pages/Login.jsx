@@ -32,7 +32,8 @@ function Login() {
                     text: "Congrates",
                     icon: "success"
                   });
-                Swal.fire( "Welcome",user.email)
+                Swal.fire( "Welcome")
+            
                 setEmail("")
                 setPassword("")
                 navigate(`/`);
@@ -53,11 +54,7 @@ function Login() {
 
     return (
         <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-blue-500"}`}>
-            <div className="flex justify-end align-middle mr-2 ">
-                <button className="border p-2 rounded mt-4">
-                    <Link to="/">Home</Link>
-                </button>
-            </div>
+            
             <div className="min-h-screen flex items-center justify-center">
                 <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
                     <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
@@ -89,6 +86,8 @@ function Login() {
                         <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                             Login
                         </button>
+
+                       <Link to={"/SignUp"}><p className="flex justify-center align-middle mt-1"> Or SignUp</p></Link> 
                     </form>
                 </div>
             </div>

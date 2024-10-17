@@ -81,11 +81,11 @@ function Header() {
                                 SignUp
                             </Button>
                         </Link>
-                        <Link to="/Login">
+                        {/* <Link to="/Login">
                             <Button className="border-gray-700 border transition-transform transform hover:scale-105">
                                 Login
                             </Button>
-                        </Link>
+                        </Link> */}
                         </div>
                         
 
@@ -101,11 +101,11 @@ function Header() {
                             SignUp
                         </button>
                     </Link>
-                    <Link to="/Login">
+                    {/* <Link to="/Login">
                         <button className="inline-flex items-center bg-gray-100 border-0 py-2 px-4 rounded text-base text-black hover:bg-gray-200 transition-colors">
                             Login
                         </button>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </header>

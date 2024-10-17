@@ -4,49 +4,53 @@ import { userCredential } from "../contexts/userContext";
 import Swal from "sweetalert2";
 import { db } from "../utils/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router";
 
 function Contact() {
   const { user } = useContext(userCredential);
   const { theme } = useContext(ThemeContext);
 
-  const [Fname, setFname] = useState("");
+ 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   // Update name and email when the user context changes
 
   useEffect(() => {
     if (user) {
-      setFname(user.displayName || ""); // Set name if available
+      
       setEmail(user.email || ""); // Set email if available
-      console.log(user.displayName)
+      console.log(user.email)
     }
   }, [user]);
+  
+
 
   const handleBtn = async () => {
-    if (!Fname || !message) {
+    if ( !message) {
       Swal.fire("Kindly fill all fields");
       return;
     }
 
     if (!email) {
       Swal.fire("Login First Your Email is Required");
+      navigate("/SignUp")
       return;
     }
 
-    Swal.fire(`${Fname}, your response is recorded!`);
+    Swal.fire(` your response is recorded!`);
 
     try {
       // Add user input to Firestore
       await addDoc(collection(db, "contacts"), {
-        name: Fname,
         email: email,
         message: message,
       });
 
       // Clear form fields
-      setFname("");
       setMessage("");
+      
     } catch (error) {
       console.error("Error adding document: ", error);
       Swal.fire("Error!", "Something went wrong. Please try again.", "error");
@@ -79,10 +83,10 @@ function Contact() {
                 type="text"
                 id="Fname"
                 name="Fname"
-                value={Fname}
                 onChange={(e) => setFname(e.target.value)}
                 className="w-full bg-gray-200 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 required
+                
               />
             </div>
             <div className="relative mb-4">
