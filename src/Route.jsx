@@ -28,11 +28,6 @@ import { userCredential } from "./contexts/userContext.jsx";
 function AppRouter() {
     const {user} =  useContext(userCredential);
 
-
- 
-
-   
-
     return (
         <BrowserRouter>
             <Routes>

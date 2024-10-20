@@ -4,12 +4,16 @@ import { collection, addDoc } from "firebase/firestore";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import { ThemeContext } from "../../contexts/ThemeContext";
+import { userCredential } from "../../contexts/userContext";
 
 
 
 
 
 function Form() {
+
+    const {user} =  useContext(userCredential);
+
     const {theme}  = useContext(ThemeContext);
    
 
@@ -88,7 +92,7 @@ function Form() {
                         type="text"
                         id="name"
                         name="name"
-                        value={name}
+                        value={user.name || ""}
                         onChange={(e) => setName(e.target.value)}
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         placeholder="John Doe"
@@ -103,7 +107,9 @@ function Form() {
                         type="email"
                         id="email"
                         name="email"
-                        value={email}
+                        value={user.email  || ""}
+                        readOnly
+
                         onChange={(e) => setEmail(e.target.value)}
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         placeholder="you@example.com"
