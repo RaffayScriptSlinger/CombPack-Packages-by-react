@@ -14,15 +14,20 @@ import Hiking from "./components/TourDetails/Hiking.jsx";
 import MountainBike from "./components/TourDetails/MountainBike.jsx";
 import Fishing from "./components/TourDetails/Fishing.jsx";
 import TourLayout from "./components/TourDetails/TourLayout.jsx";
-import Cart from "./components/TourDetails/cart.jsx";
+import FAQs from "./components/TourDetails/Faqs.jsx";
 import Japan from "./components/TourDetails/Japan.jsx";
-import Maldives  from "./components/TourDetails/Maldives.jsx";
-
+import Maldives from "./components/TourDetails/Maldives.jsx";
+import Form from "./components/TourDetails/form.jsx";
+import { userCredential } from "./contexts/userContext.jsx";
+import { useContext } from "react";
+import { Navigate } from "react-router-dom";
 
 
 
 
 function AppRouter() {
+   
+
     return (
         <BrowserRouter>
             <Routes>
@@ -39,9 +44,10 @@ function AppRouter() {
                 <Route path="/TourDetails/Hiking" element={<TourLayout><Hiking /></TourLayout>} />
                 <Route path="/TourDetails/MountainBike" element={<TourLayout><MountainBike /></TourLayout>} />
                 <Route path="/TourDetails/Fishing" element={<TourLayout><Fishing /></TourLayout>} />
-                <Route path="/cart" element={<TourLayout><Cart /></TourLayout>  } /> 
-                <Route path="/Maldives" element = { <Layout><Maldives/></Layout>  }/>
-                <Route  path="/Japan" element = { <Layout><Japan/></Layout> } />
+                <Route path="/faqs" element={<TourLayout><FAQs /></TourLayout >} />
+                <Route path="/Maldives" element={<TourLayout><Maldives /></TourLayout>} />
+                <Route path="/Japan" element={<TourLayout><Japan /></TourLayout>} />
+                <Route  path="/Form" element={ user ?  <TourLayout><Form /></TourLayout> :  <Navigate to="/Login" />} />           
             </Routes>
         </BrowserRouter>
     );

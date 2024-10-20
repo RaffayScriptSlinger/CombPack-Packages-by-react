@@ -1,34 +1,34 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext"; // Importing ThemeContext
-import { useCart } from "../../contexts/CartContext"; // Importing CartContext
+// import { useCart } from "../../contexts/CartContext"; // Importing CartContext
 
 function MountainBike() {
     // Accessing theme from ThemeContext
     const { theme } = useContext(ThemeContext);
     // Accessing addToCart function from CartContext
-    const { addToCart } = useCart(); 
+    // const { addToCart } = useCart(); 
 
     // Mountain bike adventure item definition
-    const mountainBikeItem = {
-        id: 4,
-        name: 'Mountain Bike Adventure', // Name of the item
-        price: 59.99, // Price of the item
-        description: 'Experience the thrill of mountain biking', // Item description
-        image: 'https://plus.unsplash.com/premium_photo-1663013212103-d68586132dfc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Image URL
-    };
+    // const mountainBikeItem = {
+    //     id: 4,
+    //     name: 'Mountain Bike Adventure', // Name of the item
+    //     price: 59.99, // Price of the item
+    //     description: 'Experience the thrill of mountain biking', // Item description
+    //     image: 'https://plus.unsplash.com/premium_photo-1663013212103-d68586132dfc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Image URL
+    // };
 
-    const [numberOfPersons, setNumberOfPersons] = useState(1); // State to keep track of number of persons
+    // const [numberOfPersons, setNumberOfPersons] = useState(1); // State to keep track of number of persons
 
-    // Function to increase the number of persons
-    const increasePersons = () => {
-        setNumberOfPersons(prev => prev + 1);
-    };
+    // // Function to increase the number of persons
+    // const increasePersons = () => {
+    //     setNumberOfPersons(prev => prev + 1);
+    // };
 
-    // Function to decrease the number of persons
-    const decreasePersons = () => {
-        setNumberOfPersons(prev => (prev > 1 ? prev - 1 : 1)); // Prevent going below 1
-    };
+    // // Function to decrease the number of persons
+    // const decreasePersons = () => {
+    //     setNumberOfPersons(prev => (prev > 1 ? prev - 1 : 1)); // Prevent going below 1
+    // };
 
     return (
         <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>
@@ -45,9 +45,9 @@ function MountainBike() {
                         <p className="mb-8 leading-relaxed">
                             Ride through rugged trails and conquer steep climbs with the thrill of mountain biking. Whether you're navigating technical descents or enjoying the scenic views, mountain biking is the perfect blend of adventure and nature.
                         </p>
-                        
+
                         {/* Buttons to increase or decrease the number of persons */}
-                        <div className="flex items-center mb-4">
+                        {/* <div className="flex items-center mb-4">
                             <button
                                 className="border rounded px-2 py-1 mr-2"
                                 onClick={decreasePersons}
@@ -61,19 +61,23 @@ function MountainBike() {
                             >
                                 +
                             </button>
-                        </div>
+                        </div> */}
 
                         {/* Add to Cart and Home buttons */}
+
                         <div className="flex justify-center">
-                            <button
-                                className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-                                onClick={() => addToCart({ ...mountainBikeItem, quantity: numberOfPersons })}
-                            >
-                                Add to Cart
-                            </button>
-                            <Link to={"/Content"}>
+                            <Link to={"/Form"}>
+                                <button
+                                    className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+
+                                >
+                                    Book Now
+                                </button>
+                            </Link>
+
+                            <Link to={"/faqs"}>
                                 <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                                    Home
+                                    FAQs
                                 </button>
                             </Link>
                         </div>
@@ -84,7 +88,7 @@ function MountainBike() {
                         <img
                             className="object-cover object-center rounded"
                             alt="Mountain Bike Adventure"
-                            src={mountainBikeItem.image}
+                            src="https://plus.unsplash.com/premium_photo-1663013212103-d68586132dfc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                         />
                     </div>
                 </div>

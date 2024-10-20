@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { Button } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+// import { useCart } from "../contexts/CartContext";
 
 function Header() {
     const { theme, ToggleTheme } = useContext(ThemeContext);
     const [isMenuOpen, setMenuOpen] = useState(false);
+    // const { cartItems } = useCart();
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
@@ -57,7 +60,7 @@ function Header() {
                     </svg>
                 </button>
 
-                {/* Off-Canvas Menu for Mobile */}
+           
                 <div className={`fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={toggleMenu}></div>
                 <div className={`fixed top-0 left-0 w-64 bg-white dark:bg-gray-800 h-full shadow-lg transition-transform duration-300 transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} z-50`}>
                     <div className="flex justify-between items-center p-4">
@@ -81,11 +84,18 @@ function Header() {
                                 SignUp
                             </Button>
                         </Link>
-                        {/* <Link to="/Login">
-                            <Button className="border-gray-700 border transition-transform transform hover:scale-105">
-                                Login
-                            </Button>
-                        </Link> */}
+                       
+                    {/* <Link to={"/cart"} target="blank">
+                        <div className="relative">
+
+                            <ShoppingCartOutlined className="mx-2 text-2xl" />
+
+
+                            {cartItems.length > 0 && (
+                                <span className="absolute top-0 right-0 block h-2 w-2 bg-red-500 rounded-full opacity-70"></span>
+                            )}
+                        </div>
+                    </Link> */}
                         </div>
                         
 
@@ -93,6 +103,18 @@ function Header() {
                 </div>
 
                 <div className="hidden md:flex items-center space-x-4">
+
+                {/* <Link to={"/cart"} target="blank">
+                        <div className="relative">
+
+                            <ShoppingCartOutlined className="mx-2 text-2xl" />
+
+
+                            {cartItems.length > 0 && (
+                                <span className="absolute top-0 right-0 block h-2 w-2 bg-red-500 rounded-full opacity-70"></span>
+                            )}
+                        </div>
+                    </Link> */}
                     <Button className="border-red-700 border transition-transform transform hover:scale-105" onClick={ToggleTheme}>
                         {theme === "light" ? "Make It Dark" : "Make It Light"}
                     </Button>
@@ -101,11 +123,8 @@ function Header() {
                             SignUp
                         </button>
                     </Link>
-                    {/* <Link to="/Login">
-                        <button className="inline-flex items-center bg-gray-100 border-0 py-2 px-4 rounded text-base text-black hover:bg-gray-200 transition-colors">
-                            Login
-                        </button>
-                    </Link> */}
+                   
+                 
                 </div>
             </div>
         </header>

@@ -5,12 +5,10 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { userCredential } from "../contexts/userContext";
 import Swal from "sweetalert2";
-import { updateProfile } from 'firebase/auth';
-
 
 function Login() {
     const navigate = useNavigate(); 
-    // user or updateuser ko hamne context se access keya han
+
     const { user, updateUser } = useContext(userCredential);
 
     const { theme } = useContext(ThemeContext);

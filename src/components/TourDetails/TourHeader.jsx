@@ -1,11 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
-import { ShopOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+// import { useCart } from '../../contexts/CartContext';
 
 function TourHeader() {
     const { theme, ToggleTheme } = useContext(ThemeContext);
+    // const { cartItems } = useCart();
+
     return (
         <div className={`${theme === "light" ? "bg-white shadow-md" : "bg-gray-800 text-white shadow-lg"} `}>
             <header className=" body-font">
@@ -26,26 +29,37 @@ function TourHeader() {
                         <span className="ml-3 text-xl">Cp Packages</span>
                     </a>
                     <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-                        <Link to={"/TourDetails/Camping"} className="mr-5 font-semibold hover:text-indigo-500">Camping</Link>
-                        <Link to={"/TourDetails/Hiking"} className="mr-5 font-semibold hover:text-indigo-500">Hiking</Link>
-                        <Link to={"/TourDetails/MountainBike"} className="mr-5 font-semibold hover:text-indigo-500">Mountain Bike</Link>
-                        <Link to={"/TourDetails/Fishing"} className="mr-5 font-semibold hover:text-indigo-500">Fishing</Link>
+                        <Link to={"/TourDetails/Camping"} className="mr-5 font-semibold hover:text-indigo-500 border-2   border-gray-200 rounded  lg:border-0">
+                            Camping
+                        </Link>
+
+
+                        <Link to={"/TourDetails/Hiking"} className="mr-5 font-semibold hover:text-indigo-500  border-2   border-gray-200 rounded  lg:border-0">Hiking</Link>
+                        <Link to={"/TourDetails/MountainBike"} className="mr-5 font-semibold hover:text-indigo-500   border-2   border-gray-200 rounded  lg:border-0        ">Mountain Bike</Link>
+                        <Link to={"/TourDetails/Fishing"} className="mr-5 font-semibold hover:text-indigo-500  border-2   border-gray-200 rounded  lg:border-0">Fishing</Link>
+                        <Link to={"/Japan"} className="mr-5 font-semibold hover:text-indigo-500 border-2   border-gray-200 rounded  lg:border-0">Japan</Link>
+                        <Link to={"/Maldives"} className="mr-5 font-semibold hover:text-indigo-500 border-2   border-gray-200 rounded  lg:border-0 ">Maldives</Link>
                     </nav>
                     <Button className="border-gray-700 border transition-transform transform hover:scale-105" onClick={ToggleTheme}>
                         {theme === "light" ? "Make It Dark" : "Make It Light"}
                     </Button>
-                    <Link to={"/cart"}>
-                    <Button className="mx-2 text-2xl">
-                       <ShoppingCartOutlined/>
-                    </Button>
-                    </Link>
-                    
+
+
+                    {/* <Link to={"/cart"}>
+                        <div className="relative">
+
+                            <ShoppingCartOutlined className="mx-2 text-2xl" />
+
+
+                            {cartItems.length > 0 && (
+                                <span className="absolute top-0 right-0 block h-2 w-2 bg-red-500 rounded-full opacity-70"></span>
+                            )}
+                        </div>
+                    </Link> */}
                 </div>
             </header>
-
         </div>
     )
 }
-export default TourHeader
 
-
+export default TourHeader;

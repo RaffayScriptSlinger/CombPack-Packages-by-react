@@ -46,7 +46,7 @@ function Destination() {
               </p>
               <Link to={`/Japan`} target="blank">
                 <Button className="text-center text-indigo-600">
-                  View More...
+                 Book Now
                 </Button>
               </Link>
 
@@ -70,7 +70,7 @@ function Destination() {
               </p>
               <Link to={"/Maldives"} target="blank">
                 <Button className="text-center text-indigo-600">
-                  View More...
+                  Book Now 
                 </Button>
               </Link>
 

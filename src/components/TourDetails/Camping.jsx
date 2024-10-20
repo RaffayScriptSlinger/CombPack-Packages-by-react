@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../contexts/ThemeContext";
-import { useContext, useState } from "react";
-import { useCart } from "../../contexts/CartContext"; // Import the Cart context
+import { useContext } from "react";
+// import { useCart } from "../../contexts/CartContext"; // Import the Cart context
 
 function Camping() {
   // Accessing the current theme from ThemeContext
   const { theme } = useContext(ThemeContext);
   // Accessing the addToCart function from CartContext
-  const { addToCart } = useCart();
+  // const { addToCart } = useCart();
 
   // Define the camping tour item to be added to the cart
   const campingItem = {
@@ -19,17 +19,17 @@ function Camping() {
   };
 
   // State for the number of persons attending the camping tour
-  const [numberOfPersons, setNumberOfPersons] = useState(1);
+  // const [numberOfPersons, setNumberOfPersons] = useState(1);
 
-  // Function to increase the number of persons
-  const increasePersons = () => {
-    setNumberOfPersons((prev) => prev + 1);
-  };
+  // // Function to increase the number of persons
+  // const increasePersons = () => {
+  //   setNumberOfPersons((prev) => prev + 1);
+  // };
 
-  // Function to decrease the number of persons
-  const decreasePersons = () => {
-    setNumberOfPersons((prev) => (prev > 1 ? prev - 1 : 1)); // Prevent going below 1
-  };
+  // // Function to decrease the number of persons
+  // const decreasePersons = () => {
+  //   setNumberOfPersons((prev) => (prev > 1 ? prev - 1 : 1)); // Prevent going below 1
+  // };
 
   return (
     <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}>
@@ -47,7 +47,7 @@ function Camping() {
             </p>
 
             {/* Number of persons selector */}
-            <div className="flex items-center mb-4">
+            {/* <div className="flex items-center mb-4">
               <button className="border rounded px-2 py-1 mr-2" onClick={decreasePersons}>
                 -
               </button>
@@ -55,24 +55,22 @@ function Camping() {
               <button className="border rounded px-2 py-1 ml-2" onClick={increasePersons}>
                 +
               </button>
-            </div>
+            </div> */}
 
             {/* Add to Cart and Home buttons */}
             <div className="flex justify-center">
-              <button
-                className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-                onClick={() =>
-                  addToCart({
-                    ...campingItem,
-                    quantity: numberOfPersons,
-                  })
-                }
-              >
-                Add to Cart
-              </button>
-              <Link to={"/Content"}>
+              <Link to={"/Form"}>
+                <button
+                  className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+
+                >
+                  Book Now
+                </button>
+              </Link>
+
+              <Link to={"/faqs"}>
                 <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                  Home
+                  FAQs
                 </button>
               </Link>
             </div>

@@ -46,15 +46,15 @@ import './index.css';
 import AppRouter from './Route.jsx';
 import ThemeContentProvider from './contexts/ThemeContext.jsx';
 import UserContextProvider from './contexts/userContext.jsx';
-import { CartProvider } from './contexts/CartContext.jsx'; // Ensure this import is correct
+// import { CartProvider } from './contexts/CartContext.jsx'; // Ensure this import is correct
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeContentProvider>
       <UserContextProvider>
-        <CartProvider> {/* Ensure this matches the export from CartContext */}
+        {/* <CartProvider> Ensure this matches the export from CartContext */}
           <AppRouter />
-        </CartProvider>
+        {/* </CartProvider> */}
       </UserContextProvider>
     </ThemeContentProvider>
   </StrictMode>

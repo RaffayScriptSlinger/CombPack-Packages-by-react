@@ -9,8 +9,6 @@ function Content() {
 
 
 
-
-  // yaha theme mangwaye han mene Theme Context se
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -37,9 +35,7 @@ function Content() {
               heard of them man bun deep jianbing selfies heirloom prism food truck
               ugh squid celiac humblebrag.
             </p>
-            {/* <Button className="text-indigo-600 font-semibold">
-  view More
-</Button> */}
+       
           </div>
           <div className="flex flex-wrap -m-4 text-black" >
             <div className="xl:w-1/4 md:w-1/2 p-4">
@@ -60,7 +56,7 @@ function Content() {
                   Escape the city and reconnect with nature. Enjoy campfires, stargazing, and hiking for a refreshing outdoor retreat Camping.
                 </p>
                 <div className="flex justify-center text-center">
-                  <Link to={"/TourDetails/Camping"}>
+                  <Link to={"/TourDetails/Camping"} target="blank">
                     <Button className="text-indigo-600 font-semibold text-center" >
                       view More
                     </Button>
@@ -91,9 +87,9 @@ function Content() {
 
                 </p>
                 <div className="flex justify-center text-center">
-                  <Link to={"/TourDetails/Hiking"}>
+                  <Link to={"/TourDetails/Hiking" } target="blank">
 
-                    <Button className="text-indigo-600 font-semibold text-center">
+                    <Button className="text-indigo-600 font-semibold text-center" > 
                       view More
                     </Button>
                   </Link>
@@ -121,7 +117,7 @@ function Content() {
 
                 </p>
                 <div className="flex justify-center text-center">
-                  <Link to={"/TourDetails/MountainBike"}>
+                  <Link to={"/TourDetails/MountainBike"} target="blank">
 
                     <Button className="text-indigo-600 font-semibold text-center">
                       view More
@@ -151,7 +147,7 @@ function Content() {
 
                 </p>
                 <div className="flex justify-center text-center">
-                  <Link to={"/TourDetails/Fishing"}>
+                  <Link to={"/TourDetails/Fishing"} target="blank">
 
                     <Button className="text-indigo-600 font-semibold text-center">
                       view More

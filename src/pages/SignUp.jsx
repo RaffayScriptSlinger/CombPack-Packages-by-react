@@ -12,7 +12,7 @@ function SignUp() {
   const navigate = useNavigate();
   const { theme } = useContext(ThemeContext);
   const { updateUser } = useContext(userCredential); // Access updateUser from the context
-
+  
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -100,7 +100,6 @@ function SignUp() {
             </button>
             <p className="flex justify-center align-middle mt-1"> Already have a account?  <Link to="/login">  Login Here</Link></p>
             <p className="flex justify-center align-middle mt-1">   <Link to="/">Guest Account</Link></p>
-
           </form>
         </div>
       </div>
