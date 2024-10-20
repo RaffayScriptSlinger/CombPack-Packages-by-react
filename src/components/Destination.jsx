@@ -44,7 +44,7 @@ function Destination() {
                 Experience Japan's vibrant culture and culinary delights. Savor sushi and ramen, explore cherry blossoms, ancient temples, and enjoy the perfect blend of tradition and modernity.
 
               </p>
-              <Link to={`/Japan`} target="blank">
+              <Link to={`/Japan`} >
                 <Button className="text-center text-indigo-600">
                  Book Now
                 </Button>
@@ -68,7 +68,7 @@ function Destination() {
                 Explore the Maldives, where turquoise waters and pristine beaches await. Enjoy luxury in overwater bungalows, indulge in fresh seafood, and experience relaxation in this tropical paradise.
 
               </p>
-              <Link to={"/Maldives"} target="blank">
+              <Link to={"/Maldives"} >
                 <Button className="text-center text-indigo-600">
                   Book Now 
                 </Button>

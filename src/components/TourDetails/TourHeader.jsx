@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+
 
 
 function TourHeader() {
@@ -45,17 +45,6 @@ function TourHeader() {
                     </Button>
 
 
-                    {/* <Link to={"/cart"}>
-                        <div className="relative">
-
-                            <ShoppingCartOutlined className="mx-2 text-2xl" />
-
-
-                            {cartItems.length > 0 && (
-                                <span className="absolute top-0 right-0 block h-2 w-2 bg-red-500 rounded-full opacity-70"></span>
-                            )}
-                        </div>
-                    </Link> */}
                 </div>
             </header>
         </div>
