@@ -1,7 +1,4 @@
 import { createContext, useState } from "react";
-import {db}  from '../utils/firebase';
-import  { collection, addDoc } from "firebase/firestore";
-
 
 
 
@@ -15,18 +12,6 @@ function UserContextProvider({ children }) {
   const updateUser = (userInfo) => {
     setUser(userInfo);
   };
-  try {
-    const docRef =  addDoc(collection(db, "users"), {
-      
-      email : user.email,
-     
-
-
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
 
 
   return (

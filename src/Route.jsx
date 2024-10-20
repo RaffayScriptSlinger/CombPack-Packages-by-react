@@ -18,14 +18,19 @@ import FAQs from "./components/TourDetails/Faqs.jsx";
 import Japan from "./components/TourDetails/Japan.jsx";
 import Maldives from "./components/TourDetails/Maldives.jsx";
 import Form from "./components/TourDetails/form.jsx";
-import { userCredential } from "./contexts/userContext.jsx";
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
+import { userCredential } from "./contexts/userContext.jsx";
+
 
 
 
 
 function AppRouter() {
+    const {user} =  useContext(userCredential);
+
+
+ 
+
    
 
     return (
@@ -47,7 +52,7 @@ function AppRouter() {
                 <Route path="/faqs" element={<TourLayout><FAQs /></TourLayout >} />
                 <Route path="/Maldives" element={<TourLayout><Maldives /></TourLayout>} />
                 <Route path="/Japan" element={<TourLayout><Japan /></TourLayout>} />
-                <Route  path="/Form" element={ user ?  <TourLayout><Form /></TourLayout> :  <Navigate to="/Login" />} />           
+                <Route  path="/Form" element={user ?  <TourLayout><Form /></TourLayout> : <Login/>   } />           
             </Routes>
         </BrowserRouter>
     );

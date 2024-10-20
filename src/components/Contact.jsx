@@ -10,7 +10,8 @@ function Contact() {
   const { user } = useContext(userCredential);
   const { theme } = useContext(ThemeContext);
 
- 
+ const  [name, setName] = useState("");
+
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
@@ -19,9 +20,10 @@ function Contact() {
 
   useEffect(() => {
     if (user) {
-      
+      setName(user.name || "")
       setEmail(user.email || ""); // Set email if available
       console.log(user.email)
+      console.log(user)
     }
   }, [user]);
   
@@ -86,6 +88,7 @@ function Contact() {
                 onChange={(e) => setFname(e.target.value)}
                 className="w-full bg-gray-200 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 required
+                value={name}
                 
               />
             </div>

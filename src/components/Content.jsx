@@ -56,7 +56,7 @@ function Content() {
                   Escape the city and reconnect with nature. Enjoy campfires, stargazing, and hiking for a refreshing outdoor retreat Camping.
                 </p>
                 <div className="flex justify-center text-center">
-                  <Link to={"/TourDetails/Camping"} target="blank">
+                  <Link to={"/TourDetails/Camping"} >
                     <Button className="text-indigo-600 font-semibold text-center" >
                       view More
                     </Button>
@@ -87,7 +87,7 @@ function Content() {
 
                 </p>
                 <div className="flex justify-center text-center">
-                  <Link to={"/TourDetails/Hiking" } target="blank">
+                  <Link to={"/TourDetails/Hiking" } >
 
                     <Button className="text-indigo-600 font-semibold text-center" > 
                       view More
@@ -117,7 +117,7 @@ function Content() {
 
                 </p>
                 <div className="flex justify-center text-center">
-                  <Link to={"/TourDetails/MountainBike"} target="blank">
+                  <Link to={"/TourDetails/MountainBike"} >
 
                     <Button className="text-indigo-600 font-semibold text-center">
                       view More
@@ -147,7 +147,7 @@ function Content() {
 
                 </p>
                 <div className="flex justify-center text-center">
-                  <Link to={"/TourDetails/Fishing"} target="blank">
+                  <Link to={"/TourDetails/Fishing"} >
 
                     <Button className="text-indigo-600 font-semibold text-center">
                       view More
