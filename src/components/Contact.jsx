@@ -16,14 +16,12 @@ function Contact() {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  // Update name and email when the user context changes
+ 
 
   useEffect(() => {
     if (user) {
       setName(user.name || "")
-      setEmail(user.email || ""); // Set email if available
-      console.log(user.email)
-      console.log(user)
+      setEmail(user.email || ""); 
     }
   }, [user]);
   
@@ -44,13 +42,13 @@ function Contact() {
     Swal.fire(` your response is recorded!`);
 
     try {
-      // Add user input to Firestore
+    
       await addDoc(collection(db, "contacts"), {
         email: email,
         message: message,
       });
 
-      // Clear form fields
+     
       setMessage("");
       
     } catch (error) {

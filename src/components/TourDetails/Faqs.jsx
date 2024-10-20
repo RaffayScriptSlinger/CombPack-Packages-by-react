@@ -16,7 +16,9 @@ function FAQs() {
                     </div>
             ))
             }
+           
         </div>
+
     );
 }
 

@@ -1,4 +1,4 @@
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import { db } from "../../utils/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import Swal from "sweetalert2";
@@ -6,82 +6,59 @@ import { useNavigate } from "react-router";
 import { ThemeContext } from "../../contexts/ThemeContext";
 import { userCredential } from "../../contexts/userContext";
 
-
-
-
-
 function Form() {
-
-    const {user} =  useContext(userCredential);
-
-    const {theme}  = useContext(ThemeContext);
-   
-
+    const { user } = useContext(userCredential);
+    const { theme } = useContext(ThemeContext);
     const [name, setName] = useState("");
     const [email, setEmail] = useState('');
     const [travelDate, setTravelDate] = useState()
     const [Package, setPackage] = useState('')
     const [Phone, setPhone] = useState()
-    const [number , setNumber] = useState('')
+    const [number, setNumber] = useState('')
     const [Req, setReq] = useState(``)
     const Navigate = useNavigate()
     const today = new Date().toISOString().split('T')[0];
 
-
-
-
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(
-            name === "" || email === ""  || Date === "" || Package === "" || Phone === "" || Req === ""
+        if (
+            name === "" || email === "" || Date === "" || Package === "" || Phone === "" || Req === ""
 
-        ){
-          Swal.fire("Please Fill All Fields")
+        ) {
+            Swal.fire("Please Fill All Fields")
         }
-        else{
+        else {
             try {
-            
+
                 await addDoc(collection(db, "Tour"), {
-                  name: name,
-                  email: email,
-                  Package: Package,
-                  Phone: Phone,
-                  Req: Req,
-                  number : number,
-                  travelDate : travelDate
+                    name: name,
+                    email: email,
+                    Package: Package,
+                    Phone: Phone,
+                    Req: Req,
+                    number: number,
+                    travelDate: travelDate
 
-              });
-  
-  
-  
-              // console.log("Document written with ID: ", docRef.id);
-              Swal.fire("Your Request Has Been Sent Successfully" , "success")
+                });
+                Swal.fire("Your Request Has Been Sent Successfully", "success")
 
-  
-              setName("");
-              setEmail("");
-              setTravelDate("");
-              setPackage("");
-              setPhone("");
-              setNumber("");
-              setReq("");
-              Navigate("/")
-  
-  
-          } catch (e) {
-              console.error("Error adding document: ", e);
-          }
-  
-      }
+                setName("");
+                setEmail("");
+                setTravelDate("");
+                setPackage("");
+                setPhone("");
+                setNumber("");
+                setReq("");
+                Navigate("/")
 
+
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
         }
-        
-
-
-
+    }
     return (
-        <div  className={`${theme === "light" ? "bg-white text-black" : "bg-black text-indigo-500"}`}>
+        <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-indigo-500"}`}>
             <div className="max-w-lg mx-auto p-6 bg-gray-100 shadow-md rounded-lg">
                 <h2 className="text-2xl font-semibold mb-6 text-center">Booking Form</h2>
 
@@ -107,7 +84,7 @@ function Form() {
                         type="email"
                         id="email"
                         name="email"
-                        value={user.email  || ""}
+                        value={user.email || ""}
                         readOnly
 
                         onChange={(e) => setEmail(e.target.value)}
@@ -129,9 +106,9 @@ function Form() {
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         required
                         min={today} // This restricts the user from selecting past dates
-                        
-                       
-                        
+
+
+
                     />
                 </div>
 
@@ -145,10 +122,10 @@ function Form() {
                         onChange={(e) => setPackage(e.target.value)}
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         required
-                       
+
 
                     >
-                        <option value=""  className="bg-gray-300">Select a Package</option>
+                        <option value="" className="bg-gray-300">Select a Package</option>
                         <option value="Hiking" className="bg-gray-300">Hiking</option>
                         <option value="Fishing" className="bg-gray-300">Fishing </option>
                         <option value="Mountain Bike" className="bg-gray-300">Mountain Bike</option>
@@ -182,9 +159,9 @@ function Form() {
                         onChange={(e) => setNumber(e.target.value)}
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Number Of persons"
-                        min ="0"
+                        min="0"
                         required
-                        max = "50"
+                        max="50"
                     />
                 </div>
 

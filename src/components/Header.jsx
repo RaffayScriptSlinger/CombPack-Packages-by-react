@@ -1,16 +1,11 @@
-
-
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { Button } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
-// import { useCart } from "../contexts/CartContext";
 
 function Header() {
     const { theme, ToggleTheme } = useContext(ThemeContext);
     const [isMenuOpen, setMenuOpen] = useState(false);
-    // const { cartItems } = useCart();
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
@@ -35,7 +30,7 @@ function Header() {
                     <span className="ml-3">Combpack Packages</span>
                 </a>
 
-                {/* Navigation Links for Desktop */}
+
                 <nav className="hidden md:flex items-center space-x-4">
                     <Link className="hover:text-indigo-600" to="/">Home</Link>
                     <Link className="hover:text-indigo-600" to="/About">Tours Page</Link>
@@ -48,7 +43,7 @@ function Header() {
                     className="md:hidden ml-auto p-2 rounded focus:outline-none"
                     onClick={toggleMenu}
                 >
-                    {/* Hamburger Icon */}
+
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-black"
@@ -60,7 +55,7 @@ function Header() {
                     </svg>
                 </button>
 
-           
+
                 <div className={`fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={toggleMenu}></div>
                 <div className={`fixed top-0 left-0 w-64 bg-white dark:bg-gray-800 h-full shadow-lg transition-transform duration-300 transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} z-50`}>
                     <div className="flex justify-between items-center p-4">
@@ -79,42 +74,21 @@ function Header() {
                         </Button>
                         <div className="flex justify-evenly items-center  p-3 mt-2 ">
 
-                        <Link to="/SignUp">
-                            <Button className="border-gray-700 border transition-transform transform hover:scale-105">
-                                SignUp
-                            </Button>
-                        </Link>
-                       
-                    {/* <Link to={"/cart"} target="blank">
-                        <div className="relative">
+                            <Link to="/SignUp">
+                                <Button className="border-gray-700 border transition-transform transform hover:scale-105">
+                                    SignUp
+                                </Button>
+                            </Link>
 
-                            <ShoppingCartOutlined className="mx-2 text-2xl" />
-
-
-                            {cartItems.length > 0 && (
-                                <span className="absolute top-0 right-0 block h-2 w-2 bg-red-500 rounded-full opacity-70"></span>
-                            )}
                         </div>
-                    </Link> */}
-                        </div>
-                        
+
 
                     </nav>
                 </div>
 
                 <div className="hidden md:flex items-center space-x-4">
 
-                {/* <Link to={"/cart"} target="blank">
-                        <div className="relative">
 
-                            <ShoppingCartOutlined className="mx-2 text-2xl" />
-
-
-                            {cartItems.length > 0 && (
-                                <span className="absolute top-0 right-0 block h-2 w-2 bg-red-500 rounded-full opacity-70"></span>
-                            )}
-                        </div>
-                    </Link> */}
                     <Button className="border-red-700 border transition-transform transform hover:scale-105" onClick={ToggleTheme}>
                         {theme === "light" ? "Make It Dark" : "Make It Light"}
                     </Button>
@@ -123,8 +97,7 @@ function Header() {
                             SignUp
                         </button>
                     </Link>
-                   
-                 
+
                 </div>
             </div>
         </header>

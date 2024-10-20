@@ -7,7 +7,7 @@ import { userCredential } from "../contexts/userContext";
 import Swal from "sweetalert2";
 
 function Login() {
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
     const { updateUser } = useContext(userCredential);
     const { theme } = useContext(ThemeContext);
 
@@ -20,7 +20,7 @@ function Login() {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-               
+
                 updateUser({ name: user.displayName || "User", email: user.email });
                 console.log("User logged in:", user);
 

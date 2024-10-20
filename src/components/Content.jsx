@@ -3,14 +3,9 @@ import { useContext } from "react"
 import { Button, Image } from "antd";
 import { Link } from "react-router-dom";
 
-
-
 function Content() {
 
-
-
   const { theme } = useContext(ThemeContext);
-
   return (
     <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `}>
       <section className=" body-font">

@@ -2,13 +2,13 @@ import { createContext, useState } from "react";
 
 
 
-// Create the user context
+
 export const userCredential = createContext();
 
 function UserContextProvider({ children }) {
-  const [user, setUser] = useState(null); // Initial state
+  const [user, setUser] = useState(null); 
 
-  // Function to update user
+
   const updateUser = (userInfo) => {
     setUser(userInfo);
   };

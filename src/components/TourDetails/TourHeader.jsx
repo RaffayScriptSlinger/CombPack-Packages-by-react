@@ -3,11 +3,11 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-// import { useCart } from '../../contexts/CartContext';
+
 
 function TourHeader() {
     const { theme, ToggleTheme } = useContext(ThemeContext);
-    // const { cartItems } = useCart();
+    
 
     return (
         <div className={`${theme === "light" ? "bg-white shadow-md" : "bg-gray-800 text-white shadow-lg"} `}>
