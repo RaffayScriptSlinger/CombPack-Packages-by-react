@@ -69,7 +69,6 @@ function Form() {
                         type="text"
                         id="name"
                         name="name"
-                        value={user.name || ""}
                         onChange={(e) => setName(e.target.value)}
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         placeholder="John Doe"
