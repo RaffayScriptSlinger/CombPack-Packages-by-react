@@ -21,13 +21,7 @@ function Form() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (
-            name === "" || email === "" || Date === "" || Package === "" || Phone === "" || Req === ""
-
-        ) {
-            Swal.fire("Please Fill All Fields")
-        }
-        else {
+        
             try {
 
                 await addDoc(collection(db, "Tour"), {
@@ -54,8 +48,9 @@ function Form() {
 
             } catch (e) {
                 console.error("Error adding document: ", e);
+                Swal.fire("Error", "Please try again", "error")
             }
-        }
+        
     }
     return (
         <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-indigo-500"}`}>
