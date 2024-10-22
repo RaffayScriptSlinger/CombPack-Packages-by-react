@@ -42,7 +42,7 @@ function Japan() {
                                     Japan is an island nation in East Asia, known for its rich cultural heritage, technological advancements, and beautiful landscapes. It consists of four main islands—Honshu, Hokkaido, Kyushu, and Shikoku—along with thousands of smaller islands. Japan's capital, Tokyo, is one of the largest and most densely populated cities in the world, famous for its mix of modern skyscrapers, historical temples, and cultural landmarks
                                 </p>
                                 <div className="flex  align-middle">
-                                    <Link to={"/Form"} className="text-indigo-500 inline-flex items-center" href="https://en.wikipedia.org/wiki/Japan" target="blank">
+                                    <Link to={"/Form"} className="text-indigo-500 inline-flex items-center" href="https://en.wikipedia.org/wiki/Japan">
 
                                         Book Now
                                         <svg

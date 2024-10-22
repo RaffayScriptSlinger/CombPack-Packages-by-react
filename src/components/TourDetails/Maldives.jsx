@@ -38,7 +38,7 @@ function Maldives() {
                                 <p className="leading-relaxed text-lg mb-4">
                                     The Maldives is celebrated for its natural beauty, offering opportunities for snorkeling, diving, and water sports, thanks to its abundant sea life and coral reefs. The country is also at the forefront of environmental conservation efforts, given the rising threat of climate change and rising sea levels. Tourism, fishing, and agriculture are the key contributors to the economy. Despite its modernization, the Maldives maintains its strong cultural heritage, influenced by South Asian, Arab, and African traditions
                                 </p>
-                                <Link to={"/Form"} className="text-indigo-500 inline-flex items-center" target="blank">
+                                <Link to={"/Form"} className="text-indigo-500 inline-flex items-center" >
                                   
                                         Book Now
                                         <svg
