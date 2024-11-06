@@ -17,16 +17,20 @@ import TourLayout from "./components/TourDetails/TourLayout.jsx";
 import FAQs from "./components/TourDetails/Faqs.jsx";
 import Japan from "./components/TourDetails/Japan.jsx";
 import Maldives from "./components/TourDetails/Maldives.jsx";
-import Form from "./components/TourDetails/form.jsx";
+import AllPackages from "./components/IslamicPackages/allPackages.jsx";
+import Form from "./components/forms/form.jsx";
 import { useContext } from "react";
 import { userCredential } from "./contexts/userContext.jsx";
+import IslamicForm from "./components/forms/islamicForm.jsx";
+import FormLayout from "./components/forms/formLayout.jsx";
+import Pricing from "./components/Pricing.jsx";
 
 
 
 
 
 function AppRouter() {
-    const {user} =  useContext(userCredential);
+    const { user } = useContext(userCredential);
 
     return (
         <BrowserRouter>
@@ -47,7 +51,11 @@ function AppRouter() {
                 <Route path="/faqs" element={<TourLayout><FAQs /></TourLayout >} />
                 <Route path="/Maldives" element={<TourLayout><Maldives /></TourLayout>} />
                 <Route path="/Japan" element={<TourLayout><Japan /></TourLayout>} />
-                <Route  path="/Form" element={user ?  <TourLayout><Form /></TourLayout> : <Login/>   } />           
+                <Route path="/AllPackages" element={<AllPackages />} />
+                <Route path="/islamicForm" element={user ? <FormLayout> <IslamicForm /> </FormLayout> : <Login />} />
+                <Route path="/Form" element={user ? <FormLayout> <Form /> </FormLayout> : <Login />} />
+                <Route path="/Pricing" element ={ <FormLayout><Pricing/></FormLayout> } />
+
             </Routes>
         </BrowserRouter>
     );

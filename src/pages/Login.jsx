@@ -1,18 +1,36 @@
 import { ThemeContext } from "../contexts/ThemeContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { auth } from "../utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { userCredential } from "../contexts/userContext";
 import Swal from "sweetalert2";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../utils/firebase";
 
 function Login() {
     const navigate = useNavigate();
     const { updateUser } = useContext(userCredential);
     const { theme } = useContext(ThemeContext);
-
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(db, "users"));
+                querySnapshot.forEach((doc) => {
+                    console.log(`${doc.id} =>`, doc.data());
+                });
+            } catch (error) {
+                console.log("Error fetching user data:", error);
+            }
+        };
+
+        fetchUserData();
+    }, []);
+
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,7 +50,7 @@ function Login() {
 
                 setEmail("");
                 setPassword("");
-                navigate(``);
+                navigate(`/`);
             })
             .catch((error) => {
                 console.log("Error logging in:", error.code, error.message);

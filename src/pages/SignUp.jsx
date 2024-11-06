@@ -25,11 +25,7 @@ function SignUp() {
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
-
-               
                 await updateProfile(user, { displayName: name });
-
-                
                 await setDoc(doc(db, "users", user.uid), {
                     name: name,
                     email: email,

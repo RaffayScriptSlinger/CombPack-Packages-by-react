@@ -2,10 +2,14 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { Button } from "antd";
+import { userCredential } from "../contexts/userContext";
 
 function Header() {
     const { theme, ToggleTheme } = useContext(ThemeContext);
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const { user } = useContext(userCredential);
+    console.log(user)
+
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
@@ -92,11 +96,13 @@ function Header() {
                     <Button className="border-red-700 border transition-transform transform hover:scale-105" onClick={ToggleTheme}>
                         {theme === "light" ? "Make It Dark" : "Make It Light"}
                     </Button>
-                    <Link to="/SignUp">
+
+                    {user ? "" : <Link to="/SignUp">
                         <button className="inline-flex items-center bg-gray-100 border-0 py-2 px-4 rounded text-base text-black hover:bg-gray-200 transition-colors">
-                            SignUp
+                            Sign Up
                         </button>
-                    </Link>
+                    </Link>}
+
 
                 </div>
             </div>

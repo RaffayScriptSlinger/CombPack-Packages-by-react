@@ -18,42 +18,52 @@ function Form() {
     const [Req, setReq] = useState(``)
     const Navigate = useNavigate()
     const today = new Date().toISOString().split('T')[0];
+    console.log(user)
 
     const handleSubmit = async (e) => {
+
         e.preventDefault();
-        
-            try {
 
-                await addDoc(collection(db, "Tour"), {
-                    name: name,
-                    email: email,
-                    Package: Package,
-                    Phone: Phone,
-                    Req: Req,
-                    number: number,
-                    travelDate: travelDate
+        try {
 
-                });
-                Swal.fire("Your Request Has Been Sent Successfully", "success")
+            await addDoc(collection(db, "Tour"), {
+                name: name,
+                email: email,
+                Package: Package,
+                Phone: Phone,
+                Req: Req,
+                number: number,
+                travelDate: travelDate
 
-                setName("");
-                setEmail("");
-                setTravelDate("");
-                setPackage("");
-                setPhone("");
-                setNumber("");
-                setReq("");
-                Navigate("/")
+            });
 
 
-            } catch (e) {
-                console.error("Error adding document: ", e);
-                Swal.fire("Error", "Please try again", "error")
-            }
-        
+
+
+            Swal.fire({
+                title: "Your Package  Has Been Booked Successfully",
+                text: "Our Team Will Contact You soon!",
+                icon: "success"
+            });
+
+            setName("");
+            setEmail("");
+            setTravelDate("");
+            setPackage("");
+            setPhone("");
+            setNumber("");
+            setReq("");
+            Navigate("/")
+
+
+        } catch (e) {
+            console.error("Error adding document: ", e);
+            Swal.fire("Error", "Please try again", "error")
+        }
+
     }
     return (
-        <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-indigo-500"}`}>
+        <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-indigo-500"} mt-3`}>
             <div className="max-w-lg mx-auto p-6 bg-gray-100 shadow-md rounded-lg">
                 <h2 className="text-2xl font-semibold mb-6 text-center">Booking Form</h2>
 
@@ -64,6 +74,7 @@ function Form() {
                         type="text"
                         id="name"
                         name="name"
+                        value={user.name || ""}
                         onChange={(e) => setName(e.target.value)}
                         className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         placeholder="John Doe"

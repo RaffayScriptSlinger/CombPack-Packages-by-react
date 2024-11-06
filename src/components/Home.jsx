@@ -5,6 +5,9 @@ import Agency from "./Agency"
 import Contact from "./Contact"
 import { useContext } from "react"
 import { Link } from "react-router-dom"
+import IslamicDisplay from "./IslamicPackages/mainDisplay"
+import Pricing from "./Pricing"
+
 
 
 
@@ -45,12 +48,11 @@ function Home() {
         </div>
       </section>
       <About />
-
+      <IslamicDisplay/>
+      <Pricing />
       <Agency />
+
       <Contact />
-
-
-
     </div>
   )
 }

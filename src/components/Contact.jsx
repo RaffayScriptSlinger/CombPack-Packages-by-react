@@ -9,26 +9,24 @@ import { useNavigate } from "react-router";
 function Contact() {
   const { user } = useContext(userCredential);
   const { theme } = useContext(ThemeContext);
-
- const  [name, setName] = useState("");
-
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
- 
+
 
   useEffect(() => {
     if (user) {
       setName(user.name || "")
-      setEmail(user.email || ""); 
+      setEmail(user.email || "");
     }
   }, [user]);
-  
+
 
 
   const handleBtn = async () => {
-    if ( !message) {
+    if (!message) {
       Swal.fire("Kindly fill all fields");
       return;
     }
@@ -42,15 +40,15 @@ function Contact() {
     Swal.fire(` your response is recorded!`);
 
     try {
-    
+
       await addDoc(collection(db, "contacts"), {
         email: email,
         message: message,
       });
 
-     
+
       setMessage("");
-      
+
     } catch (error) {
       console.error("Error adding document: ", error);
       Swal.fire("Error!", "Something went wrong. Please try again.", "error");
@@ -87,14 +85,14 @@ function Contact() {
                 className="w-full bg-gray-200 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 required
                 value={name}
-                
+
               />
             </div>
             <div className="relative mb-4">
               <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
               <input
                 type="email"
-                id="email"
+                id="email" z
                 name="email"
                 value={email}
                 readOnly
