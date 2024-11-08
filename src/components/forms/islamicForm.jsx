@@ -16,6 +16,7 @@ function IslamicForm() {
     const [contactNumber, setcontactNumber] = useState()
     const [Travel, setTravel] = useState()
     const [Persons, setPersons] = useState()
+    const [packagePricing, setpackagePricing] = useState(``)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -28,6 +29,7 @@ function IslamicForm() {
                 Package: Package,
                 Travel: Travel,
                 Persons: Persons,
+                packagePricing : packagePricing,
 
 
             });
@@ -164,6 +166,24 @@ function IslamicForm() {
                                 <option value="Islamic Tour" >Islamic History Tour</option>
                             </select>
                         </div>
+
+
+
+                        <div className="relative mb-4">
+                            <label htmlFor="text" className="leading-7 text-sm text-gray-600">
+                                Select Your Package Pricing
+                            </label>
+                            <select name="" id="" className="w-full p-2 border " onChange={(e) => setpackagePricing((e.target.value))}
+                                value={packagePricing}>
+                                <option value="" className="bg-gray-300">Select a Package Type</option>
+                                <option value="Start" className="bg-gray-300">Start</option>
+                                <option value="PRO" className="bg-gray-300">PRO </option>
+                                <option value="BUSINESS" className="bg-gray-300">BUSINESS</option>
+                                <option value="SPECIAL" className="bg-gray-300">SPECIAL</option>
+                            </select>
+                        </div>
+
+
 
                         <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onClick={handleSubmit}>
                             Conform Booking

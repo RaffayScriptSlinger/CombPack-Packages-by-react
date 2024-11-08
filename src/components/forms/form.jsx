@@ -16,7 +16,9 @@ function Form() {
     const [Phone, setPhone] = useState()
     const [number, setNumber] = useState('')
     const [Req, setReq] = useState(``)
+    const [packagePricing,setpackagePricing] = useState(``)
     const Navigate = useNavigate()
+
     const today = new Date().toISOString().split('T')[0];
     console.log(user)
 
@@ -27,13 +29,14 @@ function Form() {
         try {
 
             await addDoc(collection(db, "Tour"), {
-                name: name,
-                email: email,
+                name: user.name || name,
+                email: user.email || email ,
                 Package: Package,
                 Phone: Phone,
                 Req: Req,
                 number: number,
-                travelDate: travelDate
+                travelDate: travelDate,
+                packagePricing : packagePricing,
 
             });
 
@@ -53,7 +56,9 @@ function Form() {
             setPhone("");
             setNumber("");
             setReq("");
+            setpackagePricing("");
             Navigate("/")
+         
 
 
         } catch (e) {
@@ -139,6 +144,29 @@ function Form() {
                         <option value="Maldives" className="bg-gray-300"> Maldives Tour</option>
                     </select>
                 </div>
+
+
+                <div className="mb-4">
+                    <label htmlFor="packagePricing" className="block text-sm font-medium text-gray-700">Package Type</label>
+                    <select
+                        id="packagePricing"
+                        name="packagePricing"
+                        value={packagePricing}
+                        onChange={(e) => setpackagePricing(e.target.value)}
+                        className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        required
+
+
+                    >
+                        <option value="" className="bg-gray-300">Select a Package Type</option>
+                        <option value="Start" className="bg-gray-300">Start</option>
+                        <option value="PRO" className="bg-gray-300">PRO </option>
+                        <option value="BUSINESS" className="bg-gray-300">BUSINESS</option>
+                        <option value="SPECIAL" className="bg-gray-300">SPECIAL</option>
+                    </select>
+                </div>
+
+
 
                 {/* Phone Number Field */}
                 <div className="mb-4">

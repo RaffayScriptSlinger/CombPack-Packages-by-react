@@ -96,7 +96,7 @@ function IslamicDisplay() {
                     </div>
                     <Link to={"/AllPackages"} className="flex justify-center mt-4">
                     <Button >
-                        View All...
+                        View More...
                     </Button>
                 </Link>
                 </div>
