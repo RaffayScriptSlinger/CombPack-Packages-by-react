@@ -68,7 +68,7 @@ function Form() {
 
     }
     return (
-        <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-indigo-500"} mt-3`}>
+        <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-indigo-500"} pt-3`}>
             <div className="max-w-lg mx-auto p-6 bg-gray-100 shadow-md rounded-lg">
                 <h2 className="text-2xl font-semibold mb-6 text-center">Booking Form</h2>
 

@@ -2,14 +2,15 @@ import { ThemeContext } from "../contexts/ThemeContext"
 import { useContext } from "react"
 import { Button, Image } from "antd";
 import { Link } from "react-router-dom";
+import IslamicDisplay from "./IslamicPackages/mainDisplay";
 
 function Content() {
 
   const { theme } = useContext(ThemeContext);
   return (
-    <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `}>
+    <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `} id="">
       <section className=" body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap w-full mb-20">
             <div className="lg:w-1/2 w-full mb-6 lg:mb-0 text-5xl">
               <h1 className=" text-5xl  sm:text-3xl  font-bold  uppercase title-font mb-2   ">
@@ -154,6 +155,7 @@ function Content() {
           </div>
         </div>
       </section>
+      <IslamicDisplay/>
 
 
     </div>

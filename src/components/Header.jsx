@@ -77,12 +77,13 @@ function Header() {
                             {theme === "light" ? "Make It Dark" : "Make It Light"}
                         </Button>
                         <div className="flex justify-evenly items-center  p-3 mt-2 ">
-
-                            <Link to="/SignUp">
+                            {!user ?  <Link to="/SignUp">
                                 <Button className="border-gray-700 border transition-transform transform hover:scale-105">
                                     SignUp
                                 </Button>
-                            </Link>
+                            </Link> : "" }
+
+                           
 
                         </div>
 

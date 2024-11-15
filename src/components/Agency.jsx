@@ -5,7 +5,7 @@ function Agency() {
     return (
         <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `}>
             <section className=" body-font">
-                <div className="container px-5 pt-6 mx-auto py-10">
+                <div className="container px-5 py-12 mx-auto ">
                     <div className="flex flex-col text-center w-full mb-20">
                         <h1 className="sm:text-3xl text-3xl  title-font mb-4  font-bold">
                             Agency
