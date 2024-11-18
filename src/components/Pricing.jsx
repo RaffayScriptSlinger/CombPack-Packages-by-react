@@ -15,12 +15,7 @@ function Pricing() {
                         <p className="lg:w-2/3 mx-auto leading-relaxed text-base ">
                             Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical.
                         </p>
-                        {/* <div className="flex mx-auto border-2 border-indigo-500 rounded overflow-hidden mt-6">
-                        <button className="py-1 px-4 bg-indigo-500 text-white focus:outline-none">
-                            Monthly
-                        </button>
-                        <button className="py-1 px-4 focus:outline-none">Annually</button>
-                    </div> */}
+                      
                     </div>
                     <div className="flex flex-wrap -m-4">
                         <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
@@ -400,7 +395,7 @@ function Pricing() {
                                 </p>
                                 <Link to={"/Form"}>
                                     <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded" >
-                                        Button
+                                        Book Now
                                         <svg
                                             fill="none"
                                             stroke="currentColor"
