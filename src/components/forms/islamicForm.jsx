@@ -4,11 +4,14 @@ import { db } from "../../utils/firebase"
 import { collection, addDoc } from "firebase/firestore"
 import Swal from "sweetalert2";
 const today = new Date().toISOString().split('T')[0];
+import { ThemeContext } from "../../contexts/ThemeContext";
+
 
 
 function IslamicForm() {
     const { user } = useContext(userCredential)
-    console.log(user)
+    const {theme} = useContext(ThemeContext)
+    
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -55,7 +58,7 @@ function IslamicForm() {
 
 
     return (
-        <div>
+        <div className={theme === "light" ? "bg-white text-black" : "bg-black text-white"}>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 lg:py-24 md:py-8 mx-auto flex flex-wrap-reverse items-center">
                     <div className="lg:w-2/6 md:w-1/2 md:pr-16 lg:pr-0 pr-0 mx-auto mt-4 lg:mt-0 md:mt-0 ">

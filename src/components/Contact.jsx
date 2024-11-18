@@ -39,8 +39,13 @@ function Contact() {
       return;
     }
 
-    Swal.fire(` your response is recorded!`);
-
+    Swal.fire({
+      title: 'We Got Your Message!',
+      text: 'Thank you for reaching out! Our team will get back to you as soon as possible.',
+      icon: 'success',
+      confirmButtonText: 'Great!'
+  });
+  
     try {
 
       await addDoc(collection(db, "contacts"), {

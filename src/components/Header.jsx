@@ -21,7 +21,7 @@ function Header() {
         auth.signOut().then(() => {
             console.log("User signed out successfully");
             
-            // Aap yahan user ko kisi aur page par redirect kar sakte hain
+          
         }).catch((error) => {
             console.error("Error signing out: ", error);
         });
@@ -73,10 +73,10 @@ function Header() {
                         </button>
                     </div>
                     <nav className="flex flex-col p-4">
-                        <Link className="py-2 text-center font-semibold hover:text-indigo-600 text-black " to="/" onClick={toggleMenu}>Home</Link>
-                        <Link className="py-2 text-center font-semibold hover:text-indigo-600  text-black" to="/About" onClick={toggleMenu}>Tours Page</Link>
-                        <Link className="py-2 text-center font-semibold hover:text-indigo-600  text-black" to="/Agency" onClick={toggleMenu}>News</Link>
-                        <Link className="py-2 text-center font-semibold hover:text-indigo-600  text-black" to="/Contact" onClick={toggleMenu}>Contact</Link>
+                        <Link className="py-2 text-center font-semibold hover:text-indigo-600  " to="/" onClick={toggleMenu}>Home</Link>
+                        <Link className="py-2 text-center font-semibold hover:text-indigo-600 " to="/About" onClick={toggleMenu}>Tours Page</Link>
+                        <Link className="py-2 text-center font-semibold hover:text-indigo-600 " to="/Agency" onClick={toggleMenu}>News</Link>
+                        <Link className="py-2 text-center font-semibold hover:text-indigo-600 " to="/Contact" onClick={toggleMenu}>Contact</Link>
                         <Button className="border-gray-700 border transition-transform transform hover:scale-105" onClick={ToggleTheme}>
                             {theme === "light" ? "Make It Dark" : "Make It Light"}
                         </Button>

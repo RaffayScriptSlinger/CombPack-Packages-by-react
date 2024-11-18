@@ -91,9 +91,9 @@ function Login() {
                         <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                             Login
                         </button>
-                        <Link to="/SignUp">
-                            <p className="flex justify-center align-middle mt-1">Or SignUp</p>
-                        </Link>
+                        <p className="flex justify-center align-middle mt-1"> Don't have an account? <Link to="/SignUp" className="font-semibold">Sign Up Here </Link></p>
+                       
+                        <p className="flex justify-center align-middle mt-1">Back to <Link to="/" className="font-semibold mx-1">Home</Link></p>
                     </form>
                 </div>
             </div>

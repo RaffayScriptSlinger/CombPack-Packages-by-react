@@ -2,7 +2,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { useContext, useState } from "react";
 import { auth, db } from "../utils/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore"; // Firestore functions
+import { doc, setDoc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { userCredential } from "../contexts/userContext";
@@ -11,6 +11,7 @@ function SignUp() {
     const navigate = useNavigate();
     const { theme } = useContext(ThemeContext);
     const { updateUser } = useContext(userCredential);
+    const [loading , setLoading] = useState(false)
 
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
@@ -23,6 +24,7 @@ function SignUp() {
             Swal.fire("Please Fill All Fields");
         } else {
             try {
+                setLoading(true)
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
                 await updateProfile(user, { displayName: name });
@@ -36,11 +38,15 @@ function SignUp() {
                 
                 updateUser({ name: user.displayName, email: user.email });
 
-                Swal.fire("Welcome!", `User created with email: ${user.email}`, "success");
+                setTimeout(()=>{
+                    setLoading(false)
+                })
+
+                Swal.fire("Welcome!", ` ${user.displayName}! Your journey with us begins now`, "success");
                 navigate(`/`);
             } catch (error) {
                 console.log("Error signing up:", error.code, error.message);
-                Swal.fire("Error", error.message, "error");
+                
             }
         }
     };
@@ -87,8 +93,9 @@ function SignUp() {
                         <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                             Sign Up
                         </button>
-                        <p className="flex justify-center align-middle mt-1">Already have an account? <Link to="/login">Login Here</Link></p>
-                    </form>
+                        <p className="flex justify-center align-middle mt-1">Already have an account? <Link to="/login">Login Here</Link> </p>
+                        <p className="flex justify-center align-middle mt-1">Back to <Link to="/" className="font-semibold mx-1">Home</Link></p>
+                    </form> 
                 </div>
             </div>
         </div>

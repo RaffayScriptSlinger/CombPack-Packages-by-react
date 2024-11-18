@@ -52,8 +52,8 @@ function AppRouter() {
                 <Route path="/Maldives" element={<TourLayout><Maldives /></TourLayout>} />
                 <Route path="/Japan" element={<TourLayout><Japan /></TourLayout>} />
                 <Route path="/AllPackages" element={<Layout> <AllPackages /></Layout> } />
-                <Route path="/islamicForm" element={user ? <FormLayout>  <IslamicForm /> </FormLayout> : <Login />} />
-                <Route path="/Form" element={user ? <FormLayout> <Form /> </FormLayout> : <Login />} />
+                <Route path="/islamicForm" element={user ? <FormLayout>  <IslamicForm /> </FormLayout> : <SignUp />} />
+                <Route path="/Form" element={user ? <FormLayout> <Form /> </FormLayout> : <SignUp />} />
                 <Route path="/Pricing" element ={ <FormLayout><Pricing/></FormLayout> } />
 
             </Routes>
