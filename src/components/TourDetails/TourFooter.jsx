@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../contexts/ThemeContext";
+import logo from "../../Images/Cp-Logo.png"
 
 
 function TourFooter(){
@@ -10,18 +11,7 @@ function TourFooter(){
            
   <div className="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col">
     <a className="flex title-font font-medium items-center md:justify-start justify-center ">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-      </svg>
+      <img src={logo} className="w-14 h-14 rounded-full" alt="" />
       <span className="ml-3 text-xl">Cp Packages</span>
     </a>
     <p className="text-sm  sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">

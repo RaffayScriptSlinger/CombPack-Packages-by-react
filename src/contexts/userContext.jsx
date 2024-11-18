@@ -11,6 +11,7 @@ function UserContextProvider({ children }) {
   const updateUser = (userInfo) => {
     setUser(userInfo);
   };
+  
 
   useEffect(() => {
     const checkingUser = onAuthStateChanged(auth, async (currentUser) => {

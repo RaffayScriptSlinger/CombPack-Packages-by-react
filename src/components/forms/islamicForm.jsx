@@ -29,7 +29,7 @@ function IslamicForm() {
                 Package: Package,
                 Travel: Travel,
                 Persons: Persons,
-                packagePricing : packagePricing,
+                packagePricing: packagePricing,
 
 
             });
@@ -57,8 +57,8 @@ function IslamicForm() {
     return (
         <div>
             <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto flex flex-wrap-reverse items-center">
-                    <div className="lg:w-2/6 md:w-1/2 md:pr-16 lg:pr-0 pr-0 mx-auto ">
+                <div className="container px-5 lg:py-24 md:py-8 mx-auto flex flex-wrap-reverse items-center">
+                    <div className="lg:w-2/6 md:w-1/2 md:pr-16 lg:pr-0 pr-0 mx-auto mt-4 lg:mt-0 md:mt-0 ">
                         <iframe width="100%" height="
                     315" src="https://www.youtube.com/embed/Tf_avSUYYi0?si=QeAC3zqT33Mla9Q3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="pb-3"></iframe>
                         <iframe width="100%" height="315" src="https://www.youtube.com/embed/mxUW9A2PMqk?si=Y7wC9-4q-hYs0dXJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="pb-3"></iframe>

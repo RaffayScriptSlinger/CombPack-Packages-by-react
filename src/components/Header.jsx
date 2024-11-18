@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { Button } from "antd";
 import { userCredential } from "../contexts/userContext";
+import { auth } from "../utils/firebase";
+import Logo from "../Images/Cp-Logo.png"
 
 function Header() {
     const { theme, ToggleTheme } = useContext(ThemeContext);
@@ -15,42 +17,44 @@ function Header() {
         setMenuOpen(!isMenuOpen);
     };
 
+    function signOutUser() {
+        auth.signOut().then(() => {
+            console.log("User signed out successfully");
+            
+            // Aap yahan user ko kisi aur page par redirect kar sakte hain
+        }).catch((error) => {
+            console.error("Error signing out: ", error);
+        });
+    }
+
+
     return (
         <header className={`${theme === "light" ? "bg-white shadow-md" : "bg-gray-800 text-white shadow-lg"} py-4`}>
             <div className="container mx-auto flex items-center justify-between px-4">
                 <a className="flex title-font font-medium items-center text-xl">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-                        viewBox="0 0 24 24"
-                    >
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    </svg>
+
+                    <img src={Logo} alt="Logo Here" className=" h-14 w-14   rounded-full" />
                     <span className="ml-3">Combpack Packages</span>
                 </a>
 
 
                 <nav className="hidden md:flex items-center space-x-4">
-                    <Link className="hover:text-indigo-600" to="/">Home</Link>
-                    <Link className="hover:text-indigo-600" to="/About">Tours Page</Link>
-                    <Link className="hover:text-indigo-600" to="/Agency">News</Link>
-                    <Link className="hover:text-indigo-600" to="/Contact">Contact</Link>
+                    <Link className=" font-semibold  hover:text-indigo-600" to="/">Home</Link>
+                    <Link className=" font-semibold hover:text-indigo-600" to="/About">Tours Page</Link>
+                    <Link className=" font-semibold hover:text-indigo-600" to="/Agency">News</Link>
+                    <Link className=" font-semibold hover:text-indigo-600" to="/Contact">Contact</Link>
 
                 </nav>
 
                 <button
                     className="md:hidden ml-auto p-2 rounded focus:outline-none"
+                    
                     onClick={toggleMenu}
                 >
 
                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-black"
+                        xmlns="http://www.w3.org/2000/svg"  
+                        className = {`${theme === "light" ? "text-black" : "text-white"  } h-6 w-6 `}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -61,7 +65,7 @@ function Header() {
 
 
                 <div className={`fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity duration-300 ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={toggleMenu}></div>
-                <div className={`fixed top-0 left-0 w-64 bg-white dark:bg-gray-800 h-full shadow-lg transition-transform duration-300 transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} z-50`}>
+                <div className={`fixed top-0 left-0 w-64 ${theme === "light" ? "bg-white" : "bg-black"} dark:bg-gray-800 h-full shadow-lg transition-transform duration-300 transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full"} z-50`}>
                     <div className="flex justify-between items-center p-4">
                         <span className="font-bold text-xl text-indigo-600">CombPack Packages</span>
                         <button className="text-black dark:text-white" onClick={toggleMenu}>
@@ -69,21 +73,21 @@ function Header() {
                         </button>
                     </div>
                     <nav className="flex flex-col p-4">
-                        <Link className="py-2 text-center hover:text-indigo-600 text-indigo-600 " to="/" onClick={toggleMenu}>Home</Link>
-                        <Link className="py-2 text-center hover:text-indigo-600  text-indigo-600" to="/About" onClick={toggleMenu}>Tours Page</Link>
-                        <Link className="py-2 text-center hover:text-indigo-600  text-indigo-600" to="/Agency" onClick={toggleMenu}>News</Link>
-                        <Link className="py-2 text-center hover:text-indigo-600  text-indigo-600" to="/Contact" onClick={toggleMenu}>Contact</Link>
+                        <Link className="py-2 text-center font-semibold hover:text-indigo-600 text-black " to="/" onClick={toggleMenu}>Home</Link>
+                        <Link className="py-2 text-center font-semibold hover:text-indigo-600  text-black" to="/About" onClick={toggleMenu}>Tours Page</Link>
+                        <Link className="py-2 text-center font-semibold hover:text-indigo-600  text-black" to="/Agency" onClick={toggleMenu}>News</Link>
+                        <Link className="py-2 text-center font-semibold hover:text-indigo-600  text-black" to="/Contact" onClick={toggleMenu}>Contact</Link>
                         <Button className="border-gray-700 border transition-transform transform hover:scale-105" onClick={ToggleTheme}>
                             {theme === "light" ? "Make It Dark" : "Make It Light"}
                         </Button>
                         <div className="flex justify-evenly items-center  p-3 mt-2 ">
-                            {!user ?  <Link to="/SignUp">
-                                <Button className="border-gray-700 border transition-transform transform hover:scale-105">
+                            {!user ? <Link to="/SignUp">
+                                <Button >
                                     SignUp
                                 </Button>
-                            </Link> : "" }
+                            </Link> : <Button onClick={ signOutUser}>Sign Out</Button>}
 
-                           
+
 
                         </div>
 
@@ -98,10 +102,10 @@ function Header() {
                         {theme === "light" ? "Make It Dark" : "Make It Light"}
                     </Button>
 
-                    {user ? "" : <Link to="/SignUp">
-                        <button className="inline-flex items-center bg-gray-100 border-0 py-2 px-4 rounded text-base text-black hover:bg-gray-200 transition-colors">
+                    {user ? <Button onClick={signOutUser}>SignOut</Button> : <Link to="/SignUp">
+                        <Button >
                             Sign Up
-                        </button>
+                        </Button>
                     </Link>}
 
 

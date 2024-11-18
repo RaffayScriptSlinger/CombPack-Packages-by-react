@@ -34,7 +34,7 @@ function AppRouter() {
 
     return (
         <BrowserRouter>
-            <Routes>
+            <Routes >
                 <Route path="/" element={<Layout><Home /></Layout>} />
                 <Route path="/Header" element={<Header />} />
                 <Route path="/About" element={<Layout><About /></Layout>} />
@@ -51,8 +51,8 @@ function AppRouter() {
                 <Route path="/faqs" element={<TourLayout><FAQs /></TourLayout >} />
                 <Route path="/Maldives" element={<TourLayout><Maldives /></TourLayout>} />
                 <Route path="/Japan" element={<TourLayout><Japan /></TourLayout>} />
-                <Route path="/AllPackages" element={<AllPackages />} />
-                <Route path="/islamicForm" element={user ? <FormLayout> <IslamicForm /> </FormLayout> : <Login />} />
+                <Route path="/AllPackages" element={<Layout> <AllPackages /></Layout> } />
+                <Route path="/islamicForm" element={user ? <FormLayout>  <IslamicForm /> </FormLayout> : <Login />} />
                 <Route path="/Form" element={user ? <FormLayout> <Form /> </FormLayout> : <Login />} />
                 <Route path="/Pricing" element ={ <FormLayout><Pricing/></FormLayout> } />
 

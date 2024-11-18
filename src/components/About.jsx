@@ -9,8 +9,8 @@ function About() {
     return (
         <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `}>
             <section className=" body-font">
-                <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-                    <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <div className="container mx-auto flex px-5 sm:py-24 md:flex-row  flex-col-reverse items-center ">
+                    <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 md:block hidden">
                     
                         <Image
                            className="object-cover object-center rounded-lg"
@@ -142,7 +142,7 @@ function About() {
                             </div>
                         </div>
                         <img
-                            className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12"
+                            className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12 hidden md:block"
                             src="https://plus.unsplash.com/premium_photo-1661962354730-cda54fa4f9f1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="step"
                         />

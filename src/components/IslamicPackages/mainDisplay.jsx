@@ -2,14 +2,24 @@
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 
-
 function IslamicDisplay() {
     return (
-        <div>
-            <section className=" body-font">
+        <div >
+            <section className=" body-font overflow-hidden container mx-auto" >
 
-                <div className="container py-24 mx-auto">
-                    <h1 className="text-4xl  font-semibold mb-10">Islamic <span className="text-indigo-500">Packages</span> </h1>
+                <div className="container py-12 md:py-24 px-5 ">
+                    {/* <h1 className="text-4xl  font-bold mb-10 sm:text-3xl uppercase  ">Islamic <span className="text-indigo-500">Packages</span> </h1> */}
+                    <div className="lg:w-1/2 w-full  lg:mb-0 text-5xl">
+          <h1 className=" text-2xl   md:text-3xl  font-bold  uppercase title-font    ">
+            Islamic
+            <br />
+            <span className="text-blue-500">
+              Packages.
+            </span>
+
+          </h1>
+          <div className="h-1 w-20 bg-indigo-500 rounded lg:mb-6 mb-2" />
+        </div>
                     <div className="flex flex-wrap -m-4">
 
                         {/* Hajj Package */}

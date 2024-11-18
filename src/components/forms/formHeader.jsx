@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import  { ThemeContext } from "../../contexts/ThemeContext";
 import { Button } from "antd";
+import logo from "../../Images/Cp-Logo.png"
 
 export default function FormHeader() {
   const {theme,ToggleTheme} = useContext(ThemeContext)
@@ -12,12 +13,12 @@ export default function FormHeader() {
 
   return (
     <div className={theme === "light" ? " bg-transparent text-black" : "bg-gray-800 text-white"}>
-      <nav className=" ">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <nav className="p-6 text-center ">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
           <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8"
+              src={logo}
+              className="h-12 w-12 rounded-full"
               alt="Flowbite Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap">
@@ -27,7 +28,7 @@ export default function FormHeader() {
           <button
             onClick={() => setIsOpen(!isOpen)} 
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
             aria-controls="navbar-solid-bg"
             aria-expanded={isOpen}
           >

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom"
 
 function Destination() {
   return (
-    <div className="container px-5 py-12 mx-auto">
+    <div className="container px-5 sm:py-8 mx-auto">
 
       <div className="flex flex-wrap w-full  ">
         <div className="lg:w-1/2 w-full  lg:mb-0 text-5xl">
-          <h1 className=" text-4xl  sm:text-3xl  font-bold  uppercase title-font mb-2   ">
+          <h1 className=" text-xl  sm:text-3xl  font-bold  uppercase title-font mb-2   ">
             destinations
             <br />
             <span className="text-blue-500">

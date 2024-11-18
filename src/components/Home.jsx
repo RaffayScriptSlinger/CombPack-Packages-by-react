@@ -6,15 +6,17 @@ import Contact from "./Contact"
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import Pricing from "./Pricing"
+// import { ArrowUpOutlined } from "@ant-design/icons"
 
 
 
 
 function Home() {
   const { theme } = useContext(ThemeContext);
+
   return (
 
-    <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  `}>
+    <div className={`${theme == "light" ? "bg-white text-black" : "bg-black text-white"}  ` } >
 
 
       <section className=" body-font ">
@@ -29,7 +31,7 @@ function Home() {
             </p>
             <div className="flex w-full md:justify-start justify-center items-end">
 
-              <button className="inline-flex text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded text-lg">
+              <button className="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">
                <Link to={"/Content"} >  LET'S GET STARTED</Link>
               </button>
             </div>
@@ -45,6 +47,11 @@ function Home() {
             />
           </div>
         </div>
+        {/* <div className="flex justify-end align-middle mr-3 " >
+        <button className="bg-gray-100 p-2 rounded-full fixed scroll-smoot" ><a href="#Home"><ArrowUpOutlined /></a> </button>
+
+        </div> */}
+        
       </section>
       <About />
       
