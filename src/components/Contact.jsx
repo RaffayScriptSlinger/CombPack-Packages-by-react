@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { db } from "../utils/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 function Contact() {
   const { user } = useContext(userCredential);
@@ -88,7 +89,7 @@ function Contact() {
                 type="text"
                 id="Fname"
                 name="Fname"
-                onChange={(e) => setFname(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full bg-gray-200 rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 required
                 value={name}
@@ -121,6 +122,12 @@ function Contact() {
               Submit
             </button>
             <p className="text-xs text-gray-500 mt-3">Note: Your response is recorded</p>
+            <p className="text-xs text-gray-500 mt-3">Have any questions? Visit our
+              
+              <Link to="/Faqs" className="font-bold ml-1">
+              FAQs!
+              </Link>
+               </p>
           </div>
         </div>
       </section>
