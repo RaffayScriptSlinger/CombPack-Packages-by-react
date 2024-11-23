@@ -24,6 +24,9 @@ import { userCredential } from "./contexts/userContext.jsx";
 import IslamicForm from "./components/forms/islamicForm.jsx";
 import FormLayout from "./components/forms/formLayout.jsx";
 import Pricing from "./components/Pricing.jsx";
+import PasswordGenerator from "./pages/passwordGenerator.jsx";
+import UserTours from "./components/userTours.jsx";
+
 
 
 
@@ -55,6 +58,9 @@ function AppRouter() {
                 <Route path="/islamicForm" element={user ? <FormLayout>  <IslamicForm /> </FormLayout> : <SignUp />} />
                 <Route path="/Form" element={user ? <FormLayout> <Form /> </FormLayout> : <SignUp />} />
                 <Route path="/Pricing" element ={ <FormLayout><Pricing/></FormLayout> } />
+                <Route path="/passwordGenerator" element={<PasswordGenerator />} />
+                <Route path="/userPackages" element={ <TourLayout><UserTours/></TourLayout>  }/>
+             
 
             </Routes>
         </BrowserRouter>

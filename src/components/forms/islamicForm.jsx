@@ -11,8 +11,6 @@ import { ThemeContext } from "../../contexts/ThemeContext";
 function IslamicForm() {
     const { user } = useContext(userCredential)
     const {theme} = useContext(ThemeContext)
-    
-
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [Package, setPackage] = useState("")
@@ -20,6 +18,7 @@ function IslamicForm() {
     const [Travel, setTravel] = useState()
     const [Persons, setPersons] = useState()
     const [packagePricing, setpackagePricing] = useState(``)
+    console.log(user.uid)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -33,6 +32,9 @@ function IslamicForm() {
                 Travel: Travel,
                 Persons: Persons,
                 packagePricing: packagePricing,
+                 uid :  user.uid,
+                 
+                
 
 
             });

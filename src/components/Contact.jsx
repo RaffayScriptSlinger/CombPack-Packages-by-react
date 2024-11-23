@@ -15,18 +15,12 @@ function Contact() {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-
-
-
-
   useEffect(() => {
     if (user) {
       setName(user.name || "")
       setEmail(user.email || "");
     }
   }, [user]);
-
-
 
   const handleBtn = async () => {
     if (!message) {

@@ -107,6 +107,22 @@ function Header() {
                             Sign Up
                         </Button>
                     </Link>}
+                    {user ? <Link to={"/userPackages"}>
+                    <Button >
+                        UserTours
+                    </Button>
+                    </Link> 
+                   
+                    : "" }
+                    {/* {user ? <Link to={"/userIslamicPackages"}>
+                    <Button >
+                        UserIslamic Packages
+                    </Button>
+                    </Link> 
+                   
+                    : "" } */}
+                    
+                   
 
 
                 </div>

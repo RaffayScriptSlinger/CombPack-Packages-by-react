@@ -35,6 +35,7 @@ function SignUp() {
                     uid: user.uid
                 });
 
+
                 
                 updateUser({ name: user.displayName, email: user.email });
 
@@ -52,7 +53,7 @@ function SignUp() {
     };
 
     return (
-        <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-blue-500"}`}>
+        <div className={`${theme === "light" ? "bg-white text-black" : "bg-black text-blue-500" } h-screen`}>
             <div className="min-h-screen flex items-center justify-center">
                 <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
                     <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
@@ -93,8 +94,9 @@ function SignUp() {
                         <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                             Sign Up
                         </button>
-                        <p className="flex justify-center align-middle mt-1">Already have an account? <Link to="/login">Login Here</Link> </p>
+                        <p className="flex justify-center align-middle mt-1">Already have an account? <Link to="/login" className="font-semibold">Login Here</Link> </p>
                         <p className="flex justify-center align-middle mt-1">Back to <Link to="/" className="font-semibold mx-1">Home</Link></p>
+                        <p className="flex justify-center align-middle mt-1"> Generate a <Link to="/passwordGenerator" className="font-semibold mx-1">Password</Link></p>
                     </form> 
                 </div>
             </div>
