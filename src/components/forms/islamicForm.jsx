@@ -5,6 +5,7 @@ import { collection, addDoc } from "firebase/firestore"
 import Swal from "sweetalert2";
 const today = new Date().toISOString().split('T')[0];
 import { ThemeContext } from "../../contexts/ThemeContext";
+import { useNavigate } from "react-router";
 
 
 
@@ -18,6 +19,7 @@ function IslamicForm() {
     const [Travel, setTravel] = useState()
     const [Persons, setPersons] = useState()
     const [packagePricing, setpackagePricing] = useState(``)
+    const navigate = useNavigate()
     console.log(user.uid)
 
     const handleSubmit = async (e) => {
@@ -34,10 +36,13 @@ function IslamicForm() {
                 packagePricing: packagePricing,
                  uid :  user.uid,
                  
+                 
                 
 
 
-            });
+            }
+           
+        );
             Swal.fire("Your Booking Is Conform Our Team will contact You Soon")
 
             console.log("Document written with ID: ", docRef.id);
@@ -53,6 +58,7 @@ function IslamicForm() {
             setcontactNumber(""),
 
             setTravel("")
+            navigate(`/`)
 
 
     }

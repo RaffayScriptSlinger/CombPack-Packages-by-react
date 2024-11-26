@@ -29,8 +29,8 @@ function Form() {
         try {
 
             await addDoc(collection(db, "Tour"), {
-                name: user.name || name,
-                email: user.email || email ,
+                name: user.name ,
+                email: user.email ,
                 Package: Package,
                 Phone: Phone,
                 Req: Req,
