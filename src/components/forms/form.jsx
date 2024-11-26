@@ -20,7 +20,7 @@ function Form() {
     const Navigate = useNavigate()
 
     const today = new Date().toISOString().split('T')[0];
-    console.log(user)
+    console.log("user in Form" , user)
 
     const handleSubmit = async (e) => {
 
@@ -37,7 +37,8 @@ function Form() {
                 number: number,
                 travelDate: travelDate,
                 packagePricing : packagePricing,
-                uid : user.uid,
+              
+                Uid: user.uid
 
             });
 

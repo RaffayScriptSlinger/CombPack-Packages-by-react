@@ -34,7 +34,7 @@ function IslamicForm() {
                 Travel: Travel,
                 Persons: Persons,
                 packagePricing: packagePricing,
-                 uid :  user.uid,
+                 Uid :  user.uid,
                  
                  
                 
