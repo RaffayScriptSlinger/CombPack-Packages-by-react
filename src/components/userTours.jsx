@@ -11,35 +11,36 @@ import { Flex, Spin } from 'antd';
 
 function UserTours() {
     const { theme } = useContext(ThemeContext)
-    const { user } = useContext(userCredential); // Context to get logged-in user
-    const [tours, setTours] = useState([]); // State to store tours
-    const [loading, setLoading] = useState(true); // State to manage loading
-    const [error, setError] = useState(null); // State to manage errors
+    const { user } = useContext(userCredential);
+    const [tours, setTours] = useState([]); 
+    const [loading, setLoading] = useState(true); 
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchUserTours = async () => {
+            
             try {
-                // Reference to the "Tours" collection with a query for user's tours
+                
                 const toursRef = collection(db, "Tour");
-                const q = query(toursRef, where("uid", "==", user.uid)); // Query by user ID
-                const querySnapshot = await getDocs(q); // Execute the query
+                const q = query(toursRef, where("uid", "==", user.uid)); 
+                const querySnapshot = await getDocs(q); 
 
                 const fetchedTours = [];
                 querySnapshot.forEach((doc) => {
-                    fetchedTours.push({ id: doc.id, ...doc.data() }); // Add each document's data
+                    fetchedTours.push({ id: doc.id, ...doc.data() }); 
                 });
 
-                setTours(fetchedTours); // Update state with fetched tours
+                setTours(fetchedTours); 
             } catch (err) {
                 console.error("Error fetching user tours:", err);
-                setError("Failed to fetch tours"); // Set error message
+                setError("Failed to fetch tours"); 
             } finally {
-                setLoading(false); // Stop loading
+                setLoading(false); 
             }
         };
 
-        fetchUserTours(); // Fetch tours on component mount
-    }, [user.uid]); // Dependency on user's ID
+        fetchUserTours(); 
+    }, [user.uid]); 
 
     console.log(tours)
 
@@ -61,11 +62,11 @@ function UserTours() {
         </div>
         )
 
-        // Display loading state
+      
     }
 
     if (error) {
-        return <div>{error}</div>; // Display error message
+        return <div>{error}</div>;
     }
 
     return (

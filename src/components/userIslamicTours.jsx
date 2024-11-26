@@ -15,6 +15,7 @@ function UserIslamicTours() {
 
     useEffect(() => {
         const fetchUserTours = async () => {
+            
             try {
                 
                 const toursRef = collection(db, "islamicTourPackages");
@@ -23,27 +24,27 @@ function UserIslamicTours() {
 
                 const fetchedTours = [];
                 querySnapshot.forEach((doc) => {
-                    fetchedTours.push({ id: doc.id, ...doc.data() }); // Add each document's data
+                    fetchedTours.push({ id: doc.id, ...doc.data() }); 
                 });
 
-                setTours(fetchedTours); // Update state with fetched tours
+                setTours(fetchedTours);
             } catch (err) {
                 console.error("Error fetching user tours:", err);
-                setError("Failed to fetch tours"); // Set error message
+                setError("Failed to fetch tours"); 
             } finally {
-                setLoading(false); // Stop loading
+                setLoading(false); 
             }
         };
 
-        fetchUserTours(); // Fetch tours on component mount
-    }, [user.uid]); // Dependency on user's ID
+        fetchUserTours(); 
+    }, [user.uid]); 
 
     if (loading) {
-        return <div>Loading...</div>; // Display loading state
+        return <div>Loading...</div>; 
     }
 
     if (error) {
-        return <div>{error}</div>; // Display error message
+        return <div>{error}</div>; 
     }
 console.log(tours)
     return (

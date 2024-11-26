@@ -20,8 +20,8 @@ function Header() {
     function signOutUser() {
         auth.signOut().then(() => {
             console.log("User signed out successfully");
-            
-          
+
+
         }).catch((error) => {
             console.error("Error signing out: ", error);
         });
@@ -37,7 +37,6 @@ function Header() {
                     <span className="ml-3">Combpack Packages</span>
                 </a>
 
-
                 <nav className="hidden md:flex items-center space-x-4">
                     <Link className=" font-semibold  hover:text-indigo-600" to="/">Home</Link>
                     <Link className=" font-semibold hover:text-indigo-600" to="/About">Tours Page</Link>
@@ -48,13 +47,13 @@ function Header() {
 
                 <button
                     className="md:hidden ml-auto p-2 rounded focus:outline-none"
-                    
+
                     onClick={toggleMenu}
                 >
 
                     <svg
-                        xmlns="http://www.w3.org/2000/svg"  
-                        className = {`${theme === "light" ? "text-black" : "text-white"  } h-6 w-6 `}
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`${theme === "light" ? "text-black" : "text-white"} h-6 w-6 `}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -85,13 +84,15 @@ function Header() {
                                 <Button >
                                     SignUp
                                 </Button>
-                            </Link> : <Button onClick={ signOutUser}>Sign Out</Button>}
+                            </Link> : <Button onClick={signOutUser}>Sign Out</Button>}
+                            {user ? <Link to={"/userPackages"}>
+                                <Button >
+                                    Your Tours
+                                </Button>
+                            </Link>
 
-
-
+                                : ""}
                         </div>
-
-
                     </nav>
                 </div>
 
@@ -108,23 +109,12 @@ function Header() {
                         </Button>
                     </Link>}
                     {user ? <Link to={"/userPackages"}>
-                    <Button >
-                        UserTours
-                    </Button>
-                    </Link> 
-                   
-                    : "" }
-                    {/* {user ? <Link to={"/userIslamicPackages"}>
-                    <Button >
-                        UserIslamic Packages
-                    </Button>
-                    </Link> 
-                   
-                    : "" } */}
-                    
-                   
+                        <Button >
+                            Your Tours
+                        </Button>
+                    </Link>
 
-
+                        : ""}
                 </div>
             </div>
         </header>

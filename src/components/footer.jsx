@@ -9,18 +9,6 @@ function LastFooter() {
     <footer className=" body-font">
       <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
         <a className="flex title-font font-medium items-center md:justify-start justify-center ">
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg> */}
           <img src={logo} className="w-14 h-14  rounded-full"  alt="" />
           <span className="ml-3 text-xl">Combpack Packages</span>
         </a>
